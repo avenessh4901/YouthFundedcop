@@ -35,7 +35,7 @@ export default function Mission() {
       {/* PAGE INTRODUCTION */}
       <section className="mission-hero">
         <p className="eyebrow">OUR PURPOSE</p>
-        <h1>Our Mission & Vision</h1>
+        <h1>Our Purpose</h1>
         <p>
           Building a future where young people have the knowledge,
           opportunities, and support to create meaningful impact.
