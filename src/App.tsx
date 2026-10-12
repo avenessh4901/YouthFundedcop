@@ -111,14 +111,15 @@ function Home() {
             <SectionLabel>A LITTLE INTRODUCTION</SectionLabel>
 
             <h2>
-              Money skills
+              Get To Know About
               <br />
-              for <span>real life.</span>
+              for <span>YouthFunded</span>
             </h2>
 
             <p>
-              Because understanding money shouldn’t be confusing,
-              intimidating, or out of reach.
+              YouthFunded is a youth-driven, non-profit organization
+            creating an educational space where young people can
+            explore financial literacy together.
             </p>
 
             <div className="note-stamp">
