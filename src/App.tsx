@@ -267,7 +267,6 @@ function App() {
           <img
             className="brand-logo"
             src="/youthfunded-logo.png"
-            alt="YouthFunded"
           />
         </a>
 
@@ -288,7 +287,7 @@ function App() {
 
       <footer className="site-footer">
         <a className="footer-brand" href="/">
-          <img src="/youthfunded-logo.png" alt="YouthFunded" />
+          <img src="/youthfunded-logo.png" />
         </a>
 
         <p>Small steps, big impact. Made for the next generation.</p>
