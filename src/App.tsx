@@ -38,7 +38,7 @@ function Home() {
               Discover YouthFunded <span>↗</span>
             </a>
             <a className="text-link" href="/mission">
-              Explore our mission →
+              Explore our purpose →
             </a>
           </div>
 
@@ -273,7 +273,7 @@ function App() {
 
         <nav className="nav-links" aria-label="Main navigation">
           <a href="/">Home</a>
-          <a href="/mission">Our Mission</a>
+          <a href="/mission">Our Purpose</a>
           <a href="/articles">Articles</a>
           <a href="/events">Events</a>
           <a href="/team">Our Team</a>
