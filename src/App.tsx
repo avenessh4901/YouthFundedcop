@@ -149,14 +149,14 @@ function Home() {
           </p>
 
           <p>
-            Our vision is to create a young generation of Indonesia that 
+            <span>Our vision</span>is to create a young generation of Indonesia that 
             understands the importance of financial skills, is willing 
             to make responsible financial choices, becomes financially 
             independent, and actively contributes to society.
           </p>
 
           <p>
-            Our mission is to make financial 
+            <span>Our mission</span>is to make financial 
             knowledge accessible to all, encourage healthy money habits, 
             reach communities with fewer opportunities, and support 
             young people working together to build a better future.
