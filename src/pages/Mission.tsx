@@ -22,7 +22,16 @@ const missions = [
 
 export default function Mission() {
   return (
-    <main className="mission-page">
+  <main
+    className="mission-page"
+    style={{
+      width: "100%",
+      maxWidth: "1200px",
+      margin: "0 auto",
+      padding: "48px 40px 80px",
+      boxSizing: "border-box",
+    }}
+  >
       <section className="mission-hero">
         <p className="eyebrow">OUR PURPOSE</p>
         <h1>Our Mission</h1>
