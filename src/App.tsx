@@ -5,6 +5,47 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="section-label">{children}</p>;
 }
 
+function BrandLogo({ footer = false }: { footer?: boolean }) {
+  return (
+    <a
+      className={footer ? "footer-brand" : "brand"}
+      href="/"
+      aria-label="YouthFunded home"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        flexShrink: 0,
+        width: footer ? "160px" : "150px",
+        minWidth: footer ? "160px" : "150px",
+        height: "65px",
+        overflow: "visible",
+        position: "relative",
+        zIndex: 10,
+        textDecoration: "none",
+      }}
+    >
+      <img
+        src="/images/youthfunded-logo.png"
+        alt="YouthFunded Logo"
+        style={{
+          display: "block",
+          width: "100%",
+          height: "100%",
+          maxWidth: "100%",
+          maxHeight: "100%",
+          objectFit: "contain",
+          objectPosition: "left center",
+          opacity: 1,
+          visibility: "visible",
+          position: "static",
+          transform: "none",
+        }}
+      />
+    </a>
+  );
+}
+
 function Home() {
   return (
     <main>
@@ -269,13 +310,7 @@ function App() {
   return (
     <>
       <header className="site-header">
-        <a className="brand" href="/" aria-label="YouthFunded home">
-          <img
-            className="brand-logo"
-            src="/images/youthfunded-logo.png"
-            alt="YouthFunded Logo"
-          />
-        </a>
+        <BrandLogo />
 
         <nav className="nav-links" aria-label="Main navigation">
           <a href="/">Home</a>
@@ -293,12 +328,7 @@ function App() {
       {page}
 
       <footer className="site-footer">
-        <a className="footer-brand" href="/" aria-label="YouthFunded home">
-          <img
-            src="/images/youthfunded-logo.png"
-            alt="YouthFunded Logo"
-          />
-        </a>
+        <BrandLogo footer />
 
         <p>Small steps, big impact. Made for the next generation.</p>
 
