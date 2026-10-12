@@ -1,9 +1,10 @@
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap');
 
 :root {
   font-family: 'DM Sans', sans-serif;
-  color: #17324f;
-  background: #fffaf0;
+  color: #243b53;
+  background: #fffaf1;
   font-synthesis: none;
   scroll-behavior: smooth;
 }
@@ -16,67 +17,108 @@ body {
   margin: 0;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  padding: 22px 6%;
-  background: #fffaf0;
-  border-bottom: 2px solid #17324f;
+a {
+  color: inherit;
 }
 
-.logo, nav a {
-  color: #17324f;
-  text-decoration: none;
-  font-weight: 700;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 18px 5%;
+  background: #fffaf1;
+  border-bottom: 2px solid #243b53;
 }
 
 .logo {
   font-family: 'Fredoka', sans-serif;
   font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
-  font-size: 0.9rem;
+  gap: 16px;
+}
+
+.nav-links a {
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #e47f91;
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 7% 85px;
   text-align: center;
-  padding: 100px 8%;
-  background: #b9e3f5;
-  border-bottom: 3px solid #17324f;
+  background:
+    radial-gradient(circle at 12% 20%, #ffffffa8 0 5px, transparent 6px),
+    radial-gradient(circle at 86% 24%, #ffffffb8 0 7px, transparent 8px),
+    #b9e3f5;
+  border-bottom: 2px solid #243b53;
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.hero::before {
+  content: '✦';
+  top: 14%;
+  left: 12%;
+  color: #f0ad5c;
+}
+
+.hero::after {
+  content: '✧';
+  right: 12%;
+  bottom: 17%;
+  color: #e47f91;
 }
 
 .eyebrow {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
+  line-height: 1.8;
   text-transform: uppercase;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Fredoka', sans-serif;
+  line-height: 1.15;
 }
 
 h1 {
-  margin: 20px 0;
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 1;
+  margin: 22px 0;
+  font-size: clamp(3.4rem, 8vw, 6.5rem);
+  letter-spacing: -2px;
 }
 
-h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-}
-
-.hero p:not(.eyebrow) {
-  max-width: 580px;
+.hero > p:not(.eyebrow) {
+  max-width: 570px;
   margin: 20px auto;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.9;
 }
 
 .cta {
@@ -84,70 +126,130 @@ h2 {
   margin-top: 18px;
   padding: 14px 22px;
   background: #ffdc7c;
-  border: 2px solid #17324f;
+  border: 2px solid #243b53;
   border-radius: 14px;
-  color: #17324f;
+  box-shadow: 4px 4px 0 #243b53;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 4px 4px 0 #17324f;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #243b53;
 }
 
 .hero-art {
-  margin-top: 40px;
-  font-size: clamp(2rem, 6vw, 4rem);
+  display: inline-block;
+  margin-top: 38px;
+  padding: 20px 30px;
+  background: #fffaf1;
+  border: 2px dashed #54738d;
+  border-radius: 24px;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  transform: rotate(-2deg);
 }
 
 section:not(.hero) {
-  padding: 70px 8%;
-  line-height: 1.8;
+  padding: 75px 8%;
+  line-height: 1.85;
 }
 
 section:not(.hero) > p {
-  max-width: 750px;
+  max-width: 760px;
+}
+
+section:not(.hero) h2 {
+  margin-top: 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+#about {
+  background: #fffaf1;
+}
+
+#vision {
+  background: #f8e9d8;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 26px;
+  margin-top: 32px;
 }
 
 .card {
-  padding: 28px;
+  padding: 30px;
   background: #d4efdc;
-  border: 2px solid #17324f;
-  border-radius: 20px;
+  border: 2px solid #243b53;
+  border-radius: 8px 22px 12px 22px;
+  box-shadow: 5px 5px 0 #243b53;
 }
 
 .card:nth-child(2) {
   background: #ffe0e8;
+  transform: rotate(1deg);
+}
+
+.card h3 {
+  font-size: 1.6rem;
 }
 
 .card li {
   margin-bottom: 12px;
 }
 
-footer {
-  padding: 30px;
-  text-align: center;
-  background: #17324f;
-  color: #fffaf0;
+#articles {
+  background: #fffaf1;
 }
 
-@media (max-width: 700px) {
-  .cards {
-    grid-template-columns: 1fr;
+#events {
+  background: #d4efdc;
+}
+
+#team {
+  background: #ffe0e8;
+}
+
+#media {
+  background: #b9e3f5;
+}
+
+footer {
+  padding: 30px 6%;
+  background: #243b53;
+  color: #fffaf1;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  nav {
+    position: relative;
+    padding: 18px 5%;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
   }
 
   .hero {
     padding: 75px 6%;
   }
 
-  nav {
-    padding: 20px 5%;
+  .cards {
+    grid-template-columns: 1fr;
   }
 
-  .nav-links {
-    gap: 12px;
+  .card:nth-child(2) {
+    transform: none;
+  }
+
+  section:not(.hero) {
+    padding: 55px 6%;
   }
 }
