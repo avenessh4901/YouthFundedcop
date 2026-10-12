@@ -111,9 +111,9 @@ function Home() {
             <SectionLabel>A LITTLE INTRODUCTION</SectionLabel>
 
             <h2>
-              Get To Know About
+              Get To Know
               <br />
-              for <span>YouthFunded</span>
+              about<span>YouthFunded</span>
             </h2>
 
             <p>
@@ -142,21 +142,24 @@ function Home() {
           </h2>
 
           <p>
-            YouthFunded is a youth-driven, non-profit organization
-            creating an educational space where young people can
-            explore financial literacy together.
+            YouthFunded is dedicated to rethinking financial education 
+            for Indonesia's youth. We go beyond basic calculations to 
+            deliver lessons that are relatable, creative, and truly 
+            useful in daily life. 
           </p>
 
           <p>
-            Rooted in the everyday experiences of Indonesian youth,
-            we turn complicated money concepts into relatable
-            knowledge, practical lessons, and meaningful conversations.
+            Our vision is to create a young generation of Indonesia that 
+            understands the importance of financial skills, is willing 
+            to make responsible financial choices, becomes financially 
+            independent, and actively contributes to society.
           </p>
 
           <p>
-            We believe every young person deserves the tools and
-            confidence to make informed financial choices and work
-            toward a more independent future.
+            Our mission is to make financial 
+            knowledge accessible to all, encourage healthy money habits, 
+            reach communities with fewer opportunities, and support 
+            young people working together to build a better future.
           </p>
 
           <a className="text-link" href="/mission">
