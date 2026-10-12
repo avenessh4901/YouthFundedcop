@@ -1,4 +1,3 @@
-
 import "./index.css";
 import Mission from "./pages/Mission";
 
@@ -118,8 +117,8 @@ function Home() {
 
             <p>
               YouthFunded is a youth-driven, non-profit organization
-            creating an educational space where young people can
-            explore financial literacy together.
+              creating an educational space where young people can
+              explore financial literacy together.
             </p>
 
             <div className="note-stamp">
@@ -142,24 +141,24 @@ function Home() {
           </h2>
 
           <p>
-            YouthFunded is dedicated to rethinking financial 
-            education for Indonesia's youth. We go beyond 
-            basic calculations to deliver lessons that are 
-            relatable, creative, and truly useful in daily life. 
+            YouthFunded is dedicated to rethinking financial
+            education for Indonesia's youth. We go beyond
+            basic calculations to deliver lessons that are
+            relatable, creative, and truly useful in daily life.
           </p>
 
           <p>
-            <span>Our vision</span> is to create a young generation 
-            of Indonesia that understands the importance of financial 
-            skills, is willing to make responsible financial choices, 
-            becomes financially independent, and actively contributes 
+            <span>Our vision</span> is to create a young generation
+            of Indonesia that understands the importance of financial
+            skills, is willing to make responsible financial choices,
+            becomes financially independent, and actively contributes
             to society.
           </p>
 
           <p>
-            <span>Our mission</span> is to make financial knowledge 
-            accessible to all, encourage healthy money habits, 
-            reach communities with fewer opportunities, and support 
+            <span>Our mission</span> is to make financial knowledge
+            accessible to all, encourage healthy money habits,
+            reach communities with fewer opportunities, and support
             young people working together to build a better future.
           </p>
 
@@ -187,7 +186,9 @@ function PlaceholderPage({
     <main className="section-pad">
       <section className="section-heading">
         <div>
-          <SectionLabel>{number} — {label}</SectionLabel>
+          <SectionLabel>
+            {number} — {label}
+          </SectionLabel>
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
@@ -271,7 +272,8 @@ function App() {
         <a className="brand" href="/" aria-label="YouthFunded home">
           <img
             className="brand-logo"
-            src="/youthfunded-logo.png"
+            src="/images/youthfunded-logo.png"
+            alt="YouthFunded Logo"
           />
         </a>
 
@@ -291,8 +293,11 @@ function App() {
       {page}
 
       <footer className="site-footer">
-        <a className="footer-brand" href="/">
-          <img src="/youthfunded-logo.png" />
+        <a className="footer-brand" href="/" aria-label="YouthFunded home">
+          <img
+            src="/images/youthfunded-logo.png"
+            alt="YouthFunded Logo"
+          />
         </a>
 
         <p>Small steps, big impact. Made for the next generation.</p>
@@ -307,4 +312,3 @@ function App() {
 }
 
 export default App;
-        
