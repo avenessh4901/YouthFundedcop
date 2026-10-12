@@ -15,7 +15,7 @@ const missions = [
     title: "Build Responsible Habits",
     description:
       "Promote a culture of responsible money management in everyday youth life.",
-    icon: "🐷",
+    icon: "💵",
     color: "pink",
   },
   {
