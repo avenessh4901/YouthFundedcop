@@ -1416,3 +1416,20 @@ p {
     transition-duration: .01ms !important;
   }
 }
+.site-header .brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 142px;
+  min-height: 54px;
+}
+
+.site-header .brand-logo {
+  display: block;
+  width: 142px;
+  height: auto;
+  max-height: 54px;
+  object-fit: contain;
+  opacity: 1;
+  visibility: visible;
+}
