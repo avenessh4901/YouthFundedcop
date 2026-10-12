@@ -111,9 +111,9 @@ function Home() {
             <SectionLabel>A LITTLE INTRODUCTION</SectionLabel>
 
             <h2>
-              Get To Know
+              Discover
               <br />
-              about<span>YouthFunded</span>
+              <span>YouthFunded</span>
             </h2>
 
             <p>
