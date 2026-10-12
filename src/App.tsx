@@ -142,10 +142,10 @@ function Home() {
           </h2>
 
           <p>
-            YouthFunded is dedicated to rethinking financial education 
-            for Indonesia's youth. We go beyond basic calculations to 
-            deliver lessons that are relatable, creative, and truly 
-            useful in daily life. 
+            YouthFunded is dedicated to rethinking financial 
+            education for Indonesia's youth. We go beyond 
+            basic calculations to deliver lessons that are 
+            relatable, creative, and truly useful in daily life. 
           </p>
 
           <p>
