@@ -100,7 +100,7 @@ function Home() {
           </div>
 
           <div className="hero-note">
-            <span>✳</span> Learn today. Make better choices tomorrow.
+            <span>✳</span> Let's build a better future, starting now — for Indonesia Emas 2045!
           </div>
         </div>
 
