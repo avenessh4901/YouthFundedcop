@@ -2,21 +2,21 @@
 const missions = [
   {
     number: "01",
-    title: "Empower Youth",
+    title: "Accessible Learning",
     description:
-      "Empowering young people to turn their ideas into meaningful initiatives and real impact.",
+      "Make financial literacy easy to understand by turning complex ideas into engaging, practical lessons anyone can follow.",
   },
   {
     number: "02",
-    title: "Expand Opportunities",
+    title: "Responsible Habit",
     description:
-      "Connecting youth with opportunities, resources, and networks to support their growth.",
+      "Build a healthy culture of smart money management and responsible financial decisions from an early age.",
   },
   {
     number: "03",
-    title: "Create Sustainable Impact",
+    title: "Youth Collaboration",
     description:
-      "Encouraging youth-led projects that contribute to positive and lasting change in communities.",
+      "Empower young people to learn, create, and grow together through community-led initiatives.",
   },
 ];
 
@@ -90,10 +90,10 @@ export default function Mission() {
           <p className="eyebrow">02 — OUR MISSION</p>
           <h2>Turning ideas into meaningful action.</h2>
           <p>
-            YouthFunded aims to support young people by expanding
-            access to opportunities, encouraging collaboration,
-            and helping youth-led ideas develop into initiatives
-            that create positive and lasting impact.
+            YouthFunded is here to redefine financial education 
+            for the younger generations of Indonesia, not just
+            counting numbers, but creating relevant, creative, 
+            and empowering choices for everyday life..
           </p>
         </div>
 
