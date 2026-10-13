@@ -2,9 +2,17 @@ import { useState, useRef, useEffect } from "react";
 import "./index.css";
 import Mission from "./pages/Mission";
 
+/* ========================================
+   SECTION LABEL
+======================================== */
+
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="section-label">{children}</p>;
 }
+
+/* ========================================
+   HOME PAGE
+======================================== */
 
 function Home() {
   return (
@@ -37,6 +45,7 @@ function Home() {
             <a className="button button-dark" href="#about">
               Discover YouthFunded <span>↗</span>
             </a>
+
             <a className="text-link" href="/mission">
               Explore our purpose →
             </a>
@@ -59,11 +68,13 @@ function Home() {
 
           <div className="art-book">
             <span className="book-small">THE LITTLE GUIDE TO</span>
+
             <strong>
               SMART
               <br />
               MONEY
             </strong>
+
             <span className="book-doodle">✳ $ ✳</span>
           </div>
 
@@ -74,10 +85,12 @@ function Home() {
           <div className="piggy">
             <div className="pig-ear" />
             <div className="pig-eye" />
+
             <div className="pig-snout">
               <i />
               <i />
             </div>
+
             <div className="pig-leg leg-left" />
             <div className="pig-leg leg-right" />
             <div className="pig-tail">〰</div>
@@ -109,6 +122,7 @@ function Home() {
         <div className="about-visual">
           <div className="paper-note">
             <span className="tape tape-one" />
+
             <SectionLabel>A LITTLE INTRODUCTION</SectionLabel>
 
             <h2>
@@ -174,6 +188,10 @@ function Home() {
   );
 }
 
+/* ========================================
+   PLACEHOLDER PAGES
+======================================== */
+
 function PlaceholderPage({
   number,
   label,
@@ -200,6 +218,10 @@ function PlaceholderPage({
     </main>
   );
 }
+
+/* ========================================
+   BRAND LOGO
+======================================== */
 
 function BrandLogo({ footer = false }: { footer?: boolean }) {
   return (
@@ -239,10 +261,20 @@ function BrandLogo({ footer = false }: { footer?: boolean }) {
   );
 }
 
-/* INTRO VIDEO */
+/* ========================================
+   INTRO VIDEO
+======================================== */
 
 function IntroVideo({ onFinish }: { onFinish: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const finishedRef = useRef(false);
+
+  const finishOnce = () => {
+    if (finishedRef.current) return;
+
+    finishedRef.current = true;
+    onFinish();
+  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -250,10 +282,17 @@ function IntroVideo({ onFinish }: { onFinish: () => void }) {
     if (!video) return;
 
     video.muted = true;
+    video.defaultMuted = true;
 
-    video.play().catch((error) => {
-      console.error("Intro video gagal autoplay:", error);
-    });
+    const playVideo = async () => {
+      try {
+        await video.play();
+      } catch (error) {
+        console.error("Intro video gagal autoplay:", error);
+      }
+    };
+
+    void playVideo();
   }, []);
 
   return (
@@ -265,7 +304,12 @@ function IntroVideo({ onFinish }: { onFinish: () => void }) {
         muted
         playsInline
         preload="auto"
-        onEnded={onFinish}
+        onEnded={finishOnce}
+        onError={() => {
+          console.error(
+            "Video intro tidak dapat dimuat. Periksa file public/intro-youthfunded.mp4."
+          );
+        }}
       >
         <source
           src="/intro-youthfunded.mp4"
@@ -275,17 +319,34 @@ function IntroVideo({ onFinish }: { onFinish: () => void }) {
     </div>
   );
 }
+
+/* ========================================
+   MAIN APP
+======================================== */
+
 function App() {
   const [showIntro, setShowIntro] = useState(() => {
-    return sessionStorage.getItem("youthfunded-intro-played") !== "true";
+    try {
+      return (
+        sessionStorage.getItem("youthfunded-intro-played") !== "true"
+      );
+    } catch {
+      return true;
+    }
   });
 
   const finishIntro = () => {
-    sessionStorage.setItem("youthfunded-intro-played", "true");
+    try {
+      sessionStorage.setItem("youthfunded-intro-played", "true");
+    } catch {
+      // Website tetap dapat digunakan jika sessionStorage tidak tersedia.
+    }
+
     setShowIntro(false);
   };
 
-  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  const path =
+    window.location.pathname.replace(/\/+$/, "") || "/";
 
   let page;
 
@@ -362,7 +423,10 @@ function App() {
           <header className="site-header">
             <BrandLogo />
 
-            <nav className="nav-links" aria-label="Main navigation">
+            <nav
+              className="nav-links"
+              aria-label="Main navigation"
+            >
               <a href="/">Home</a>
               <a href="/mission">Our Purpose</a>
               <a href="/articles">Articles</a>
@@ -385,7 +449,10 @@ function App() {
             </p>
 
             <div className="footer-bottom">
-              <span>© {new Date().getFullYear()} YouthFunded</span>
+              <span>
+                © {new Date().getFullYear()} YouthFunded
+              </span>
+
               <a href="/">Back to Home ↑</a>
             </div>
           </footer>
@@ -394,3 +461,5 @@ function App() {
     </>
   );
 }
+
+export default App;
