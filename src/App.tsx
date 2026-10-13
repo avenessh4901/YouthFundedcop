@@ -6,8 +6,56 @@ import Mission from "./pages/Mission";
    SECTION LABEL
 ======================================== */
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function SectionLabel({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return <p className="section-label">{children}</p>;
+}
+
+/* ========================================
+   BRAND LOGO
+======================================== */
+
+function BrandLogo({ footer = false }: { footer?: boolean }) {
+  return (
+    <a
+      className={footer ? "footer-brand" : "brand"}
+      href="/"
+      aria-label="YouthFunded home"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        flex: footer ? "0 0 160px" : "0 0 150px",
+        width: footer ? "160px" : "150px",
+        minWidth: footer ? "160px" : "150px",
+        height: "65px",
+        position: "relative",
+        zIndex: 10,
+        overflow: "visible",
+        textDecoration: "none",
+      }}
+    >
+      <img
+        src="/images/youthfunded-logo.png"
+        alt="YouthFunded Logo"
+        style={{
+          display: "block",
+          width: "100%",
+          height: "100%",
+          maxWidth: "100%",
+          maxHeight: "100%",
+          objectFit: "contain",
+          objectPosition: "left center",
+          opacity: 1,
+          visibility: "visible",
+          flexShrink: 0,
+        }}
+      />
+    </a>
+  );
 }
 
 /* ========================================
@@ -220,48 +268,6 @@ function PlaceholderPage({
 }
 
 /* ========================================
-   BRAND LOGO
-======================================== */
-
-function BrandLogo({ footer = false }: { footer?: boolean }) {
-  return (
-    <a
-      href="/"
-      aria-label="YouthFunded home"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-start",
-        flex: footer ? "0 0 160px" : "0 0 150px",
-        width: footer ? "160px" : "150px",
-        minWidth: footer ? "160px" : "150px",
-        height: "65px",
-        position: "relative",
-        zIndex: 999,
-        overflow: "visible",
-        textDecoration: "none",
-      }}
-    >
-      <img
-        src="/images/youthfunded-logo.png"
-        alt="YouthFunded Logo"
-        style={{
-          display: "block",
-          width: footer ? "160px" : "150px",
-          height: "65px",
-          maxWidth: "none",
-          objectFit: "contain",
-          objectPosition: "left center",
-          opacity: 1,
-          visibility: "visible",
-          flexShrink: 0,
-        }}
-      />
-    </a>
-  );
-}
-
-/* ========================================
    INTRO VIDEO
 ======================================== */
 
@@ -441,6 +447,7 @@ function App() {
 
           {page}
 
+          {/* FOOTER */}
           <footer className="site-footer">
             <BrandLogo footer />
 
@@ -450,7 +457,7 @@ function App() {
 
             <div className="footer-bottom">
               <span>
-                © {new Date().getFullYear()} YouthFunded
+                © {new Date().getFullYear()} YouthFunded. All rights reserved.
               </span>
 
               <a href="/">Back to Home ↑</a>
