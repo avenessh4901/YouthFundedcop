@@ -1540,3 +1540,175 @@ footer.site-footer a {
     transition-duration: 0.01ms !important;
   }
 }
+/* ========================================
+   18. FINAL FIXES
+======================================== */
+
+/* NAVIGATION */
+.site-header {
+  background: var(--green);
+  border-bottom: 1px solid rgba(38, 54, 74, 0.2);
+}
+
+.nav-links a {
+  color: var(--ink);
+}
+
+.nav-links a:hover {
+  color: #596719;
+}
+
+.nav-cta {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.nav-cta:hover {
+  background: #edf3cf;
+}
+
+/* LOGO */
+.site-header .brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-header .brand-logo {
+  display: block;
+  width: 142px;
+  max-width: 100%;
+  height: auto;
+  max-height: 54px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+}
+
+.article-image img,
+.doc-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RESPONSIVE VIDEO */
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.video-container,
+.video-wrapper,
+.video-responsive {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-container iframe,
+.video-wrapper iframe,
+.video-responsive iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+/* FOOTER */
+.site-footer,
+footer.site-footer {
+  display: block;
+  width: 100%;
+  padding: 35px 6%;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.site-footer .footer-inner,
+footer.site-footer .footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-footer p,
+footer.site-footer p {
+  margin: 0;
+  color: rgba(255, 250, 240, 0.9);
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+.site-footer a,
+footer.site-footer a {
+  color: var(--green);
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width: 768px) {
+  .site-header {
+    gap: 12px;
+    padding: 12px 4%;
+  }
+
+  .site-header .brand {
+    width: 110px;
+    min-width: 110px;
+  }
+
+  .site-header .brand-logo {
+    width: 110px;
+    max-height: 45px;
+  }
+
+  .nav-links {
+    width: 100%;
+    order: 3;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+
+  .hero-art {
+    max-width: 100%;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .brand {
+    width: 100px;
+    min-width: 100px;
+  }
+
+  .site-header .brand-logo {
+    width: 100px;
+  }
+
+  .nav-links {
+    gap: 10px 12px;
+  }
+
+  .site-footer,
+  footer.site-footer {
+    padding: 28px 5%;
+  }
+}
