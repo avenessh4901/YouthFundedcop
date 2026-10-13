@@ -707,6 +707,11 @@ button {
 .about-copy > p {
   color: #596675;
   font-size: 0.94rem;
+  margin-bottom: 20px;
+}
+
+.about-copy > p:last-of-type {
+  margin-bottom: 0;
 }
 
 .about-copy .text-link {
