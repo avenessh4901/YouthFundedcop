@@ -1712,3 +1712,13 @@ footer.site-footer a {
     padding: 28px 5%;
   }
 }
+/* Spasi antar paragraf di Meet YouthFunded */
+.about-copy p {
+  margin-bottom: 24px !important;
+  line-height: 1.85 !important;
+  margin-top: 0 !important;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0 !important;
+}
