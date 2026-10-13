@@ -72,11 +72,7 @@ export default function Mission() {
             A world where every young idea has the chance to grow.
           </h2>
           <p>
-            We believe young people are not only the leaders of
-            tomorrow, but also changemakers today. With access to
-            knowledge, resources, and supportive networks, their
-            ideas can become meaningful initiatives that benefit
-            their communities.
+            We envision a young Indonesia that fully understands the importance of financial literacy — a generation that confidently makes responsible financial choices, achieves true financial independence, and actively contributes to the growth and well-being of society..
           </p>
         </div>
       </section>
@@ -93,7 +89,7 @@ export default function Mission() {
             YouthFunded is here to redefine financial education 
             for the younger generations of Indonesia, not just
             counting numbers, but creating relevant, creative, 
-            and empowering choices for everyday life..
+            and empowering choices for everyday life.
           </p>
         </div>
 
