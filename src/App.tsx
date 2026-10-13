@@ -246,6 +246,7 @@ function IntroVideo({ onFinish }: { onFinish: () => void }) {
 
   useEffect(() => {
     const video = videoRef.current;
+
     if (!video) return;
 
     video.muted = true;
@@ -271,20 +272,18 @@ function IntroVideo({ onFinish }: { onFinish: () => void }) {
           type="video/mp4"
         />
       </video>
-
-      <button
-        className="skip-intro"
-        type="button"
-        onClick={onFinish}
-      >
-        Skip Intro →
-      </button>
     </div>
   );
 }
-
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(() => {
+    return sessionStorage.getItem("youthfunded-intro-played") !== "true";
+  });
+
+  const finishIntro = () => {
+    sessionStorage.setItem("youthfunded-intro-played", "true");
+    setShowIntro(false);
+  };
 
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
 
@@ -356,46 +355,42 @@ function App() {
 
   return (
     <>
-      {showIntro && (
-        <IntroVideo onFinish={() => setShowIntro(false)} />
+      {showIntro ? (
+        <IntroVideo onFinish={finishIntro} />
+      ) : (
+        <>
+          <header className="site-header">
+            <BrandLogo />
+
+            <nav className="nav-links" aria-label="Main navigation">
+              <a href="/">Home</a>
+              <a href="/mission">Our Purpose</a>
+              <a href="/articles">Articles</a>
+              <a href="/events">Events</a>
+              <a href="/team">Our Team</a>
+            </nav>
+
+            <a className="nav-cta" href="/media">
+              Let’s Connect <span>↗</span>
+            </a>
+          </header>
+
+          {page}
+
+          <footer className="site-footer">
+            <BrandLogo footer />
+
+            <p>
+              Small steps, big impact. Made for the next generation.
+            </p>
+
+            <div className="footer-bottom">
+              <span>© {new Date().getFullYear()} YouthFunded</span>
+              <a href="/">Back to Home ↑</a>
+            </div>
+          </footer>
+        </>
       )}
-
-      <div
-        style={{
-          display: showIntro ? "none" : "block",
-        }}
-      >
-        <header className="site-header">
-          <BrandLogo />
-
-          <nav className="nav-links" aria-label="Main navigation">
-            <a href="/">Home</a>
-            <a href="/mission">Our Purpose</a>
-            <a href="/articles">Articles</a>
-            <a href="/events">Events</a>
-            <a href="/team">Our Team</a>
-          </nav>
-
-          <a className="nav-cta" href="/media">
-            Let’s Connect <span>↗</span>
-          </a>
-        </header>
-
-        {page}
-
-        <footer className="site-footer">
-          <BrandLogo footer />
-
-          <p>Small steps, big impact. Made for the next generation.</p>
-
-          <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} YouthFunded</span>
-            <a href="/">Back to Home ↑</a>
-          </div>
-        </footer>
-      </div>
     </>
   );
 }
-
-export default App;
