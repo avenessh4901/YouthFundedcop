@@ -1440,3 +1440,11 @@ button {
     font-size: 0.72rem;
   }
 }
+.hero {
+  text-align: left;
+}
+
+.hero h1,
+.hero p {
+  text-align: left;
+}
