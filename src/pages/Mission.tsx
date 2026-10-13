@@ -35,10 +35,18 @@ export default function Mission() {
       {/* PAGE INTRODUCTION */}
       <section className="mission-hero">
         <p className="eyebrow">OUR PURPOSE</p>
-        <h1>Our Purpose</h1>
+        <h1> 📚 SDG 4 — Quality Education </h1>
         <p>
-          Building a future where young people have the knowledge,
-          opportunities, and support to create meaningful impact.
+          We ensure that financial knowledge is accessible, 
+          inclusive, and practical, equipping young people 
+          with skills that help them thrive in every stage 
+          of life.
+        </p>
+        <h1> 💼 SDG 8 — Decent Work and Economic Growth </h1>
+        <p>By building healthy money habits and confidence 
+          in financial decision-making, we empower youth 
+          to pursue opportunities, create value, and contribute 
+          meaningfully to Indonesia's economy.
         </p>
       </section>
 
