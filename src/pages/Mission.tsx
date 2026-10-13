@@ -10,29 +10,37 @@ const colors = {
 };
 
 const container: React.CSSProperties = {
-  width: "min(1120px, 88%)",
+  width: "min(1080px, 88%)",
   margin: "0 auto",
 };
 
 const eyebrow: React.CSSProperties = {
-  fontSize: 11,
+  fontSize: 10,
   fontWeight: 800,
-  letterSpacing: "2px",
+  letterSpacing: "1.5px",
   textTransform: "uppercase",
-  margin: "0 0 14px",
+  margin: "0 0 12px",
 };
 
 const heading: React.CSSProperties = {
   fontFamily: "'Fredoka', sans-serif",
-  fontSize: "clamp(29px, 4vw, 42px)",
-  lineHeight: 1.2,
+  fontSize: "clamp(25px, 3.2vw, 34px)",
+  lineHeight: 1.25,
   fontWeight: 600,
-  margin: "0 0 16px",
+  margin: "0 0 12px",
 };
+
+/* =====================================
+   MONEY ILLUSTRATION
+===================================== */
 
 function MoneyIllustration() {
   return (
-    <div className="yf-money-scene" role="img" aria-label="Illustration of money and coins">
+    <div
+      className="yf-money-scene"
+      role="img"
+      aria-label="Illustration of money and coins"
+    >
       <div className="yf-money-circle" />
 
       <span className="yf-money-spark yf-spark-one">✳</span>
@@ -60,53 +68,50 @@ function MoneyIllustration() {
   );
 }
 
+/* =====================================
+   SDG CARD
+===================================== */
+
 function SDGCard({
   number,
   title,
   image,
   description,
-  contribution,
   color,
 }: {
   number: string;
   title: string;
   image: string;
   description: string;
-  contribution: string;
   color: string;
 }) {
   return (
     <article className="yf-sdg-card">
-      <div className="yf-sdg-top">
-        <div className="yf-sdg-number" style={{ background: color }}>
-          SDG {number}
-        </div>
-
-        <span className="yf-sdg-label">OUR GLOBAL GOAL</span>
-      </div>
-
-      <div className="yf-sdg-icon-space">
+      <div className="yf-sdg-header">
         <img
           src={image}
-          alt={`Sustainable Development Goal ${number} icon`}
+          alt={`SDG ${number}`}
           className="yf-sdg-icon"
         />
+
+        <span
+          className="yf-sdg-number"
+          style={{ background: color }}
+        >
+          SDG {number}
+        </span>
       </div>
 
       <h3 className="yf-card-title">{title}</h3>
 
       <p className="yf-card-description">{description}</p>
-
-      <div className="yf-contribution">
-        <span className="yf-contribution-icon">✳</span>
-        <div>
-          <h4>OUR CONTRIBUTION</h4>
-          <p>{contribution}</p>
-        </div>
-      </div>
     </article>
   );
 }
+
+/* =====================================
+   MISSION CARD
+===================================== */
 
 function MissionCard({
   icon,
@@ -121,15 +126,23 @@ function MissionCard({
 }) {
   return (
     <article className="yf-mission-card">
-      <div className="yf-mission-icon" style={{ background: color }}>
+      <div
+        className="yf-mission-icon"
+        style={{ background: color }}
+      >
         <img src={icon} alt="" />
       </div>
 
       <h3>{title}</h3>
+
       <p>{description}</p>
     </article>
   );
 }
+
+/* =====================================
+   MAIN PAGE
+===================================== */
 
 export default function Mission() {
   return (
@@ -152,51 +165,51 @@ export default function Mission() {
         /* HERO */
 
         .yf-hero {
-          padding: clamp(45px, 7vw, 80px) 0;
+          padding: clamp(40px, 6vw, 65px) 0;
         }
 
         .yf-hero-layout {
           display: grid;
           grid-template-columns: 1fr 1fr;
           align-items: center;
-          gap: 45px;
+          gap: 35px;
         }
 
         .yf-hero h1 {
           font-family: 'Fredoka', sans-serif;
-          font-size: clamp(40px, 5.5vw, 60px);
-          line-height: 1.08;
-          letter-spacing: -1px;
-          margin: 0 0 22px;
+          font-size: clamp(35px, 4.5vw, 49px);
+          line-height: 1.12;
+          letter-spacing: -0.7px;
+          margin: 0 0 18px;
           font-weight: 600;
         }
 
         .yf-hero-description {
-          max-width: 460px;
+          max-width: 430px;
           color: ${colors.muted};
-          font-size: 15px;
+          font-size: 13px;
           line-height: 1.9;
-          margin: 0 0 24px;
+          margin: 0 0 20px;
         }
 
         .yf-hero-pill {
           display: inline-flex;
           align-items: center;
-          gap: 10px;
-          padding: 12px 17px;
+          gap: 9px;
+          padding: 10px 14px;
           background: ${colors.lime};
           border-radius: 100px;
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 800;
         }
 
-        /* MONEY ILLUSTRATION */
+        /* MONEY */
 
         .yf-money-scene {
           position: relative;
           width: 100%;
-          max-width: 440px;
-          height: 330px;
+          max-width: 400px;
+          height: 290px;
           margin: 0 auto;
           display: flex;
           align-items: center;
@@ -206,7 +219,7 @@ export default function Mission() {
 
         .yf-money-circle {
           position: absolute;
-          width: min(75%, 290px);
+          width: min(74%, 260px);
           aspect-ratio: 1;
           border-radius: 50%;
           background: #e6edbd;
@@ -215,24 +228,24 @@ export default function Mission() {
 
         .yf-banknote {
           position: absolute;
-          width: 205px;
-          height: 120px;
+          width: 185px;
+          height: 108px;
           border: 2px solid ${colors.navy};
-          border-radius: 12px;
+          border-radius: 11px;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 5px 6px 0 ${colors.navy};
+          box-shadow: 4px 5px 0 ${colors.navy};
         }
 
         .yf-banknote-back {
           background: ${colors.blue};
-          transform: rotate(-17deg) translate(-25px, -14px);
+          transform: rotate(-17deg) translate(-22px, -12px);
         }
 
         .yf-banknote-front {
           background: ${colors.lime};
-          transform: rotate(12deg) translate(23px, 20px);
+          transform: rotate(12deg) translate(20px, 17px);
         }
 
         .yf-banknote-inner {
@@ -240,7 +253,7 @@ export default function Mission() {
           width: 85%;
           height: 76%;
           border: 1.5px dashed ${colors.navy};
-          border-radius: 8px;
+          border-radius: 7px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -248,28 +261,28 @@ export default function Mission() {
 
         .yf-currency {
           font-family: 'Fredoka', sans-serif;
-          font-size: 56px;
-          line-height: 1;
+          font-size: 48px;
           font-weight: 600;
+          line-height: 1;
         }
 
         .yf-money-dot {
           position: absolute;
-          width: 10px;
-          height: 10px;
+          width: 8px;
+          height: 8px;
           border-radius: 50%;
           background: ${colors.navy};
         }
 
-        .dot-one { top: 8px; left: 8px; }
-        .dot-two { right: 8px; bottom: 8px; }
-        .dot-three { top: 8px; right: 8px; }
-        .dot-four { bottom: 8px; left: 8px; }
+        .dot-one { top: 7px; left: 7px; }
+        .dot-two { right: 7px; bottom: 7px; }
+        .dot-three { top: 7px; right: 7px; }
+        .dot-four { bottom: 7px; left: 7px; }
 
         .yf-coin {
           position: absolute;
-          width: 67px;
-          height: 67px;
+          width: 57px;
+          height: 57px;
           border-radius: 50%;
           border: 2px solid ${colors.navy};
           background: #f1c96c;
@@ -277,54 +290,54 @@ export default function Mission() {
           align-items: center;
           justify-content: center;
           font-family: 'Fredoka', sans-serif;
-          font-size: 29px;
+          font-size: 24px;
           font-weight: 600;
           box-shadow: 3px 4px 0 ${colors.navy};
         }
 
         .yf-coin-one {
-          right: 5%;
-          top: 13%;
+          right: 6%;
+          top: 12%;
         }
 
         .yf-coin-two {
           left: 7%;
-          bottom: 12%;
-          width: 53px;
-          height: 53px;
-          font-size: 23px;
+          bottom: 11%;
+          width: 46px;
+          height: 46px;
+          font-size: 20px;
           background: ${colors.cream};
         }
 
         .yf-money-spark {
           position: absolute;
-          font-size: 29px;
+          font-size: 24px;
           font-weight: 700;
           color: ${colors.navy};
         }
 
-        .yf-spark-one { top: 11%; left: 13%; }
-        .yf-spark-two { right: 9%; bottom: 13%; color: #7c9634; }
+        .yf-spark-one { top: 10%; left: 12%; }
+        .yf-spark-two { right: 9%; bottom: 12%; color: #7c9634; }
 
-        /* SECTION HEADINGS */
+        /* SECTION */
 
         .yf-section {
-          padding: clamp(50px, 7vw, 80px) 0;
+          padding: clamp(43px, 6vw, 65px) 0;
         }
 
         .yf-section-intro {
-          max-width: 600px;
-          margin-bottom: 32px;
+          max-width: 570px;
+          margin-bottom: 26px;
         }
 
         .yf-section-description {
           color: ${colors.muted};
-          font-size: 14px;
+          font-size: 13px;
           line-height: 1.85;
           margin: 0;
         }
 
-        /* SDG PURPOSE */
+        /* SDG */
 
         .yf-sdg-section {
           background: #f4f1e5;
@@ -333,109 +346,54 @@ export default function Mission() {
         .yf-sdg-grid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 22px;
-          align-items: stretch;
+          gap: 18px;
         }
 
         .yf-sdg-card {
           background: ${colors.white};
           border: 1px solid #26364a12;
-          border-radius: 20px;
-          padding: clamp(22px, 3vw, 30px);
-          display: flex;
-          flex-direction: column;
+          border-radius: 16px;
+          padding: 23px;
           min-width: 0;
+          transition: transform 180ms ease;
         }
 
-        .yf-sdg-top {
+        .yf-sdg-header {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 10px;
-          margin-bottom: 22px;
-        }
-
-        .yf-sdg-number {
-          padding: 9px 13px;
-          border-radius: 9px;
-          font-family: 'Fredoka', sans-serif;
-          font-size: 14px;
-          font-weight: 600;
-        }
-
-        .yf-sdg-label {
-          color: ${colors.muted};
-          font-size: 9px;
-          font-weight: 800;
-          letter-spacing: 1px;
-        }
-
-        .yf-sdg-icon-space {
-          width: 100%;
-          min-height: 145px;
-          background: #f7f7f1;
-          border: 1px dashed #26364a35;
-          border-radius: 14px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 18px;
-          margin-bottom: 22px;
+          gap: 12px;
+          margin-bottom: 19px;
         }
 
         .yf-sdg-icon {
-          display: block;
-          width: 112px;
-          height: 112px;
+          width: 62px;
+          height: 62px;
           object-fit: contain;
+          display: block;
+          flex-shrink: 0;
+          border-radius: 4px;
+        }
+
+        .yf-sdg-number {
+          padding: 7px 10px;
+          border-radius: 7px;
+          font-size: 10px;
+          font-weight: 800;
         }
 
         .yf-card-title {
           font-family: 'Fredoka', sans-serif;
-          font-size: clamp(23px, 2.5vw, 29px);
-          line-height: 1.25;
-          margin: 0 0 12px;
+          font-size: clamp(20px, 2.5vw, 24px);
+          line-height: 1.3;
+          margin: 0 0 9px;
           font-weight: 600;
         }
 
         .yf-card-description {
           color: ${colors.muted};
-          font-size: 14px;
-          line-height: 1.85;
-          margin: 0 0 23px;
-        }
-
-        .yf-contribution {
-          display: flex;
-          gap: 12px;
-          padding-top: 18px;
-          border-top: 1px solid #26364a18;
-          margin-top: auto;
-        }
-
-        .yf-contribution-icon {
-          flex-shrink: 0;
-          width: 31px;
-          height: 31px;
-          border-radius: 10px;
-          background: ${colors.lime};
-          display: grid;
-          place-items: center;
-          font-size: 15px;
-        }
-
-        .yf-contribution h4 {
-          font-size: 10px;
-          letter-spacing: 1px;
-          margin: 2px 0 8px;
-          font-weight: 800;
-        }
-
-        .yf-contribution p {
-          color: ${colors.muted};
-          font-size: 13px;
-          line-height: 1.8;
+          font-size: 12px;
+          line-height: 1.9;
           margin: 0;
         }
 
@@ -444,27 +402,27 @@ export default function Mission() {
         .yf-vision-layout {
           display: grid;
           grid-template-columns: 1fr 0.9fr;
-          gap: 45px;
+          gap: 35px;
           align-items: center;
         }
 
         .yf-vision-quote {
           background: ${colors.navy};
           color: ${colors.cream};
-          padding: clamp(26px, 4vw, 40px);
-          border-radius: 22px;
+          padding: 28px;
+          border-radius: 18px;
         }
 
         .yf-vision-quote-mark {
-          font-size: 36px;
+          font-size: 28px;
           color: ${colors.lime};
-          margin-bottom: 15px;
+          margin-bottom: 12px;
         }
 
         .yf-vision-quote p {
           font-family: 'Fredoka', sans-serif;
-          font-size: clamp(23px, 3vw, 30px);
-          line-height: 1.45;
+          font-size: clamp(21px, 2.5vw, 26px);
+          line-height: 1.5;
           margin: 0;
         }
 
@@ -477,25 +435,26 @@ export default function Mission() {
         .yf-mission-grid {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 18px;
+          gap: 15px;
         }
 
         .yf-mission-card {
           background: ${colors.white};
           border: 1px solid #26364a12;
-          border-radius: 18px;
-          padding: 25px;
+          border-radius: 16px;
+          padding: 21px;
           min-width: 0;
+          transition: transform 180ms ease;
         }
 
         .yf-mission-icon {
-          width: 66px;
-          height: 66px;
-          border-radius: 17px;
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
           display: grid;
           place-items: center;
-          padding: 13px;
-          margin-bottom: 21px;
+          padding: 10px;
+          margin-bottom: 17px;
         }
 
         .yf-mission-icon img {
@@ -507,15 +466,15 @@ export default function Mission() {
 
         .yf-mission-card h3 {
           font-family: 'Fredoka', sans-serif;
-          font-size: 21px;
-          line-height: 1.3;
-          margin: 0 0 12px;
+          font-size: 18px;
+          line-height: 1.4;
+          margin: 0 0 9px;
           font-weight: 600;
         }
 
         .yf-mission-card p {
           color: ${colors.muted};
-          font-size: 13px;
+          font-size: 12px;
           line-height: 1.85;
           margin: 0;
         }
@@ -524,36 +483,25 @@ export default function Mission() {
 
         .yf-belief {
           text-align: center;
-          max-width: 760px;
-        }
-
-        .yf-belief .yf-section-description {
-          max-width: 620px;
-          margin: 0 auto;
+          max-width: 700px;
         }
 
         .yf-belief-pill {
           display: inline-flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
           background: ${colors.lime};
           border-radius: 100px;
-          padding: 13px 20px;
-          margin-top: 25px;
-          font-size: 12px;
+          padding: 11px 16px;
+          margin-top: 22px;
+          font-size: 11px;
           font-weight: 800;
         }
 
         @media (hover: hover) {
-          .yf-sdg-card,
-          .yf-mission-card {
-            transition: transform 180ms ease, box-shadow 180ms ease;
-          }
-
           .yf-sdg-card:hover,
           .yf-mission-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 28px #26364a0d;
           }
         }
 
@@ -561,53 +509,59 @@ export default function Mission() {
           .yf-hero-layout,
           .yf-vision-layout {
             grid-template-columns: minmax(0, 1fr);
-            gap: 25px;
+            gap: 24px;
           }
 
           .yf-sdg-grid {
             grid-template-columns: minmax(0, 1fr);
+            gap: 14px;
           }
 
           .yf-mission-grid {
             grid-template-columns: minmax(0, 1fr);
+            gap: 12px;
           }
 
           .yf-hero h1 {
-            font-size: clamp(39px, 9vw, 52px);
+            font-size: clamp(36px, 9vw, 46px);
           }
 
           .yf-money-scene {
-            height: 280px;
-            max-width: 360px;
+            height: 255px;
+            max-width: 340px;
           }
 
-          .yf-sdg-icon-space {
-            min-height: 125px;
+          .yf-sdg-card {
+            padding: 20px;
           }
 
-          .yf-sdg-icon {
-            width: 95px;
-            height: 95px;
+          .yf-mission-card {
+            padding: 19px;
           }
         }
 
         @media (max-width: 380px) {
           .yf-banknote {
-            width: 155px;
-            height: 94px;
+            width: 150px;
+            height: 90px;
           }
 
           .yf-currency {
-            font-size: 43px;
+            font-size: 40px;
           }
 
           .yf-money-scene {
-            height: 240px;
+            height: 225px;
           }
 
           .yf-coin {
-            width: 53px;
-            height: 53px;
+            width: 49px;
+            height: 49px;
+          }
+
+          .yf-sdg-icon {
+            width: 55px;
+            height: 55px;
           }
         }
 
@@ -629,13 +583,13 @@ export default function Mission() {
             <h1>
               What We
               <br />
-              Stand For<span style={{ color: "#8ca33a" }}>.</span>
+              Stand For
+              <span style={{ color: "#8ca33a" }}>.</span>
             </h1>
 
             <p className="yf-hero-description">
-              We believe financial literacy gives young people
-              the knowledge to make informed decisions, explore
-              opportunities, and build a better future.
+              Financial literacy gives young people the knowledge
+              to make informed decisions and build a better future.
             </p>
 
             <div className="yf-hero-pill">
@@ -647,20 +601,20 @@ export default function Mission() {
         </div>
       </section>
 
-      {/* PURPOSE: SDG 4 AND SDG 8 */}
+      {/* PURPOSE */}
 
       <section className="yf-section yf-sdg-section">
         <div style={container}>
           <div className="yf-section-intro">
-            <p style={eyebrow}>OUR PURPOSE IN ACTION</p>
+            <p style={eyebrow}>OUR PURPOSE</p>
 
             <h2 style={heading}>
-              Knowledge today. Opportunities tomorrow.
+              Knowledge creates opportunities.
             </h2>
 
             <p className="yf-section-description">
-              Our purpose connects with two United Nations
-              Sustainable Development Goals.
+              We support quality education and inclusive economic
+              opportunities through financial literacy.
             </p>
           </div>
 
@@ -670,14 +624,16 @@ export default function Mission() {
               title="Quality Education"
               image="/images/sdg4.png"
               color={colors.blue}
-              description="Everyone deserves access to quality learning. Financial literacy helps young people understand budgeting, saving, spending, and making informed financial decisions."
-              
+              description="We make financial knowledge easier to access and understand, helping young people learn about budgeting, saving, and responsible financial decisions."
+            />
+
             <SDGCard
               number="08"
               title="Decent Work & Economic Growth"
               image="/images/sdg8.png"
               color={colors.lime}
-              description="Young people need the knowledge and confidence to prepare for work, entrepreneurship, and economic opportunities."
+              description="We encourage financial responsibility and entrepreneurial thinking so young people can prepare for future work and economic opportunities."
+            />
           </div>
         </div>
       </section>
@@ -694,9 +650,9 @@ export default function Mission() {
             </h2>
 
             <p className="yf-section-description">
-              We envision a future where every young person can
-              understand money, make responsible choices, and pursue
-              opportunities with confidence.
+              A future where young people understand money,
+              make responsible choices, and pursue opportunities
+              with confidence.
             </p>
           </div>
 
@@ -723,8 +679,8 @@ export default function Mission() {
             </h2>
 
             <p className="yf-section-description">
-              We make financial literacy accessible, practical,
-              and relevant to young people.
+              Making financial literacy accessible and relevant
+              to young people.
             </p>
           </div>
 
@@ -732,28 +688,28 @@ export default function Mission() {
             <MissionCard
               icon="/images/mission-learning.png"
               title="Accessible Learning"
-              description="Make financial knowledge easier to understand and apply."
+              description="Make financial knowledge easier to understand."
               color={colors.blue}
             />
 
             <MissionCard
               icon="/images/mission-youth.png"
               title="Youth Empowerment"
-              description="Encourage young people to lead initiatives and share ideas."
+              description="Encourage young people to share ideas and take initiative."
               color={colors.lime}
             />
 
             <MissionCard
               icon="/images/mission-growth.png"
               title="Practical Growth"
-              description="Build responsible financial habits for everyday life and the future."
+              description="Build responsible financial habits for the future."
               color="#f1c96c"
             />
           </div>
         </div>
       </section>
 
-      {/* OUR BELIEF */}
+      {/* BELIEF */}
 
       <section className="yf-section">
         <div className="yf-belief" style={container}>
@@ -765,8 +721,8 @@ export default function Mission() {
           </h2>
 
           <p className="yf-section-description">
-            Because when knowledge becomes accessible, possibilities
-            become greater.
+            Accessible knowledge can open the door to greater
+            possibilities.
           </p>
 
           <div className="yf-belief-pill">
