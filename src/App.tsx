@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./index.css";
 import Mission from "./pages/Mission";
 
@@ -336,8 +336,45 @@ function App() {
   }
 
   return (
-    <>
+  <>
+    {showIntro && (
+      <IntroVideo onFinish={() => setShowIntro(false)} />
+    )}
+
+    <div
+      style={{ display: showIntro ? "none" : "block" }}
+    >
       <header className="site-header">
+        <BrandLogo />
+
+        <nav className="nav-links" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/mission">Our Purpose</a>
+          <a href="/articles">Articles</a>
+          <a href="/events">Events</a>
+          <a href="/team">Our Team</a>
+        </nav>
+
+        <a className="nav-cta" href="/media">
+          Let’s Connect <span>↗</span>
+        </a>
+      </header>
+
+      {page}
+
+      <footer className="site-footer">
+        <BrandLogo footer />
+
+        <p>Small steps, big impact. Made for the next generation.</p>
+
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} YouthFunded</span>
+          <a href="/">Back to Home ↑</a>
+        </div>
+      </footer>
+    </div>
+  </>
+);
         <BrandLogo />
 
         <nav className="nav-links" aria-label="Main navigation">
