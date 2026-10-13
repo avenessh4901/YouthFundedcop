@@ -620,7 +620,7 @@ export default function Mission() {
 
           <div className="yf-sdg-grid">
             <SDGCard
-              number="04"
+              number="4"
               title="Quality Education"
               image="/images/sdg4.png"
               color={colors.blue}
@@ -628,7 +628,7 @@ export default function Mission() {
             />
 
             <SDGCard
-              number="08"
+              number="8"
               title="Decent Work & Economic Growth"
               image="/images/sdg8.png"
               color={colors.lime}
