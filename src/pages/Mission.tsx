@@ -75,7 +75,7 @@ export default function Mission() {
             boxSizing: "border-box",
           }}
         >
-          <p className="eyebrow">OUR VISION</p>
+          <h> className="eyebrow">OUR VISION</h>
           <h2>
             A world where every young idea has the chance to grow.
           </h2>
@@ -91,7 +91,7 @@ export default function Mission() {
         style={{ marginTop: "88px" }}
       >
         <div className="mission-intro">
-          <p className="eyebrow">02 — OUR MISSION</p>
+          <h> className="eyebrow">02 — OUR MISSION </h>
           <h2>Turning ideas into meaningful action.</h2>
           <p>
             YouthFunded is here to redefine financial education 
