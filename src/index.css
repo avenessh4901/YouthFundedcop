@@ -1242,39 +1242,62 @@ button {
     padding: 70px 5%;
   }
 }
-/* INTRO VIDEO */
+/* ========================================
+   YOUTHFUNDED FULLSCREEN INTRO
+======================================== */
 
-function IntroVideo({ onFinish }: { onFinish: () => void }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
 
-  useEffect(() => {
-    const video = videoRef.current;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    if (!video) return;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
 
-    video.muted = true;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 
-    video.play().catch((error) => {
-      console.error("Intro video gagal autoplay:", error);
-    });
-  }, []);
+  background: #000;
+}
 
-  return (
-    <div className="intro-screen">
-      <video
-        ref={videoRef}
-        className="intro-video"
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        onEnded={onFinish}
-      >
-        <source
-          src="/intro-youthfunded.mp4"
-          type="video/mp4"
-        />
-      </video>
-    </div>
-  );
-                }
+.intro-screen .intro-video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+  max-height: none;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Tampilan laptop */
+@media (min-width: 769px) {
+  .intro-screen .intro-video {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+/* Tampilan HP */
+@media (max-width: 768px) {
+  .intro-screen .intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
