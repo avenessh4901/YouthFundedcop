@@ -1,520 +1,749 @@
-const missions = [
-  {
-    number: "01",
-    title: "Accessible Learning",
-    description:
-      "Make financial literacy easy to understand through engaging, practical lessons that every young person can access.",
-    color: "#C6D95B",
-    icon: "📚",
-  },
-  {
-    number: "02",
-    title: "Responsible Habits",
-    description:
-      "Encourage healthy money management and responsible financial decisions from an early age.",
-    color: "#B8E3F5",
-    icon: "🌱",
-  },
-  {
-    number: "03",
-    title: "Youth Collaboration",
-    description:
-      "Empower young people to learn, create, and grow together through community-led initiatives.",
-    color: "#F3D6B8",
-    icon: "🤝",
-  },
-];
+import React from "react";
 
-const sectionTitle: React.CSSProperties = {
-  fontFamily: "Fredoka, sans-serif",
-  fontSize: "clamp(30px, 3.5vw, 46px)",
-  fontWeight: 600,
-  lineHeight: 1.2,
-  letterSpacing: "-0.8px",
-  margin: "0 0 18px",
+const colors = {
+  navy: "#26364a",
+  cream: "#fffaf0",
+  lime: "#C6D95B",
+  blue: "#B8E3F5",
+  white: "#ffffff",
+  muted: "#667487",
 };
 
-const bodyText: React.CSSProperties = {
-  fontSize: "clamp(14px, 1.2vw, 17px)",
-  lineHeight: 1.85,
-  color: "#526174",
-  margin: 0,
+const page: React.CSSProperties = {
+  background: colors.cream,
+  color: colors.navy,
+  minHeight: "100vh",
+  fontFamily: "'DM Sans', sans-serif",
+  overflowX: "hidden",
 };
 
-const eyebrowStyle: React.CSSProperties = {
-  color: "#71852D",
-  fontSize: "12px",
+const container: React.CSSProperties = {
+  width: "min(1120px, 88%)",
+  margin: "0 auto",
+};
+
+const eyebrow: React.CSSProperties = {
+  fontSize: 12,
   fontWeight: 800,
   letterSpacing: "2px",
+  textTransform: "uppercase",
   margin: "0 0 16px",
 };
 
+const sectionTitle: React.CSSProperties = {
+  fontFamily: "'Fredoka', sans-serif",
+  fontSize: "clamp(28px, 3.5vw, 40px)",
+  lineHeight: 1.2,
+  fontWeight: 600,
+  margin: "0 0 18px",
+};
+
+/* ========================================
+   MONEY ILLUSTRATION
+======================================== */
+
+function MoneyIllustration() {
+  return (
+    <div
+      className="yf-money-scene"
+      role="img"
+      aria-label="Illustration of banknotes and coins"
+    >
+      <style>{`
+        .yf-money-scene {
+          position: relative;
+          width: 100%;
+          max-width: 440px;
+          height: 330px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          isolation: isolate;
+        }
+
+        .yf-money-circle {
+          position: absolute;
+          width: min(75%, 290px);
+          aspect-ratio: 1;
+          border-radius: 50%;
+          background: #e6edbd;
+          z-index: -1;
+        }
+
+        .yf-banknote {
+          position: absolute;
+          width: 205px;
+          height: 120px;
+          border: 2px solid #26364a;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 5px 6px 0 #26364a;
+        }
+
+        .yf-banknote-back {
+          background: #b8e3f5;
+          transform: rotate(-17deg) translate(-25px, -14px);
+        }
+
+        .yf-banknote-front {
+          background: #c6d95b;
+          transform: rotate(12deg) translate(23px, 20px);
+        }
+
+        .yf-banknote-inner {
+          width: 85%;
+          height: 76%;
+          border: 1.5px dashed #26364a;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
+
+        .yf-currency {
+          font-family: 'Fredoka', sans-serif;
+          font-size: 56px;
+          line-height: 1;
+          font-weight: 600;
+        }
+
+        .yf-money-dot {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #26364a;
+        }
+
+        .yf-coin {
+          position: absolute;
+          width: 67px;
+          height: 67px;
+          border-radius: 50%;
+          border: 2px solid #26364a;
+          background: #f1c96c;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Fredoka', sans-serif;
+          font-size: 29px;
+          font-weight: 600;
+          box-shadow: 3px 4px 0 #26364a;
+        }
+
+        .yf-coin-one {
+          right: 5%;
+          top: 13%;
+        }
+
+        .yf-coin-two {
+          left: 7%;
+          bottom: 12%;
+          width: 53px;
+          height: 53px;
+          font-size: 23px;
+          background: #fffaf0;
+        }
+
+        .yf-money-spark {
+          position: absolute;
+          font-size: 29px;
+          font-weight: 700;
+          color: #26364a;
+        }
+
+        .yf-money-spark-one {
+          top: 11%;
+          left: 13%;
+        }
+
+        .yf-money-spark-two {
+          right: 9%;
+          bottom: 13%;
+          color: #7c9634;
+        }
+
+        @media (max-width: 600px) {
+          .yf-money-scene {
+            height: 260px;
+            max-width: 340px;
+          }
+
+          .yf-banknote {
+            width: 175px;
+            height: 102px;
+          }
+
+          .yf-currency {
+            font-size: 46px;
+          }
+
+          .yf-coin {
+            width: 56px;
+            height: 56px;
+            font-size: 24px;
+          }
+
+          .yf-coin-two {
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+          }
+
+          .yf-money-spark {
+            font-size: 24px;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .yf-money-scene {
+            height: 235px;
+          }
+
+          .yf-banknote {
+            width: 150px;
+            height: 90px;
+          }
+
+          .yf-currency {
+            font-size: 40px;
+          }
+        }
+      `}</style>
+
+      <div className="yf-money-circle" />
+
+      <span className="yf-money-spark yf-money-spark-one">
+        ✳
+      </span>
+
+      <span className="yf-money-spark yf-money-spark-two">
+        ✦
+      </span>
+
+      <div className="yf-banknote yf-banknote-back">
+        <div className="yf-banknote-inner">
+          <span className="yf-currency">$</span>
+          <span
+            className="yf-money-dot"
+            style={{ top: 8, left: 8 }}
+          />
+          <span
+            className="yf-money-dot"
+            style={{ right: 8, bottom: 8 }}
+          />
+        </div>
+      </div>
+
+      <div className="yf-banknote yf-banknote-front">
+        <div className="yf-banknote-inner">
+          <span className="yf-currency">$</span>
+          <span
+            className="yf-money-dot"
+            style={{ top: 8, right: 8 }}
+          />
+          <span
+            className="yf-money-dot"
+            style={{ bottom: 8, left: 8 }}
+          />
+        </div>
+      </div>
+
+      <div className="yf-coin yf-coin-one">$</div>
+      <div className="yf-coin yf-coin-two">¢</div>
+    </div>
+  );
+}
+
+/* ========================================
+   PURPOSE CARD
+======================================== */
+
+interface PurposeCardProps {
+  number: string;
+  title: string;
+  description: string;
+  color: string;
+  tag: string;
+  points: string[];
+}
+
+function PurposeCard({
+  number,
+  title,
+  description,
+  color,
+  tag,
+  points,
+}: PurposeCardProps) {
+  return (
+    <article className="yf-purpose-card">
+      <div className="yf-purpose-card-heading">
+        <div
+          className="yf-purpose-number"
+          style={{ background: color }}
+        >
+          {number}
+        </div>
+
+        <div>
+          <p className="yf-purpose-tag">{tag}</p>
+
+          <h3 className="yf-purpose-card-title">
+            {title}
+          </h3>
+        </div>
+      </div>
+
+      <p className="yf-purpose-description">
+        {description}
+      </p>
+
+      <div className="yf-purpose-details">
+        <p className="yf-purpose-details-label">
+          HOW WE CONNECT
+        </p>
+
+        <ul className="yf-purpose-list">
+          {points.map((point) => (
+            <li key={point}>
+              <span className="yf-check">✓</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  );
+}
+
+/* ========================================
+   MISSION PAGE
+======================================== */
+
 export default function Mission() {
   return (
-    <main
-      className="purpose-page"
-      style={{
-        width: "100%",
-        maxWidth: "1280px",
-        margin: "0 auto",
-        padding: "clamp(24px, 4vw, 52px) clamp(20px, 5vw, 64px) 80px",
-        boxSizing: "border-box",
-        color: "#26364a",
-        overflow: "hidden",
-      }}
-    >
-      {/* =====================================
-          01. WHAT WE STAND FOR
-      ===================================== */}
-      <section
-        className="purpose-hero"
-        style={{
-          display: "grid",
-          gridTemplateColumns:
-            "repeat(auto-fit, minmax(min(100%, 360px), 1fr))",
-          alignItems: "center",
-          gap: "clamp(28px, 5vw, 64px)",
-          padding: "clamp(28px, 5vw, 56px)",
-          background: "#fffaf0",
-          border: "1px solid rgba(38, 54, 74, 0.1)",
-          borderRadius: "28px",
-          boxSizing: "border-box",
-        }}
-      >
-        {/* LEFT: TEXT */}
-        <div>
-          <p style={eyebrowStyle}>YOUTHFUNDED · OUR PURPOSE</p>
+    <main className="yf-mission-page">
+      <style>{`
+        .yf-mission-page {
+          background: ${colors.cream};
+          color: ${colors.navy};
+          min-height: 100vh;
+          overflow-x: clip;
+          font-family: 'DM Sans', sans-serif;
+        }
 
-          <h1
-            style={{
-              fontFamily: "Fredoka, sans-serif",
-              fontSize: "clamp(34px, 4.2vw, 54px)",
-              fontWeight: 600,
-              lineHeight: 1.13,
-              letterSpacing: "-1.2px",
-              margin: "0 0 22px",
-              maxWidth: "540px",
-            }}
-          >
-            What We{" "}
-            <span style={{ color: "#849A35" }}>Stand For.</span>
-          </h1>
+        .yf-mission-page *,
+        .yf-mission-page *::before,
+        .yf-mission-page *::after {
+          box-sizing: border-box;
+        }
 
-          <p style={bodyText}>
-            We believe every young person deserves the knowledge
-            and confidence to make informed financial decisions.
-            By making financial literacy accessible and engaging,
-            we help young people build healthier money habits
-            and take meaningful steps toward their future.
-          </p>
+        .yf-purpose-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 22px;
+          align-items: stretch;
+        }
 
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "10px",
-              marginTop: "26px",
-            }}
-          >
-            <span
-              style={{
-                background: "#C6D95B",
-                padding: "9px 13px",
-                borderRadius: "8px",
-                fontSize: "11px",
-                fontWeight: 800,
-                letterSpacing: "0.4px",
-              }}
-            >
-              SDG 4 · EDUCATION
-            </span>
+        .yf-purpose-card {
+          background: ${colors.white};
+          border: 1px solid #26364a18;
+          border-radius: 20px;
+          padding: clamp(22px, 3vw, 32px);
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+          height: 100%;
+          box-shadow: 0 5px 18px rgba(38, 54, 74, 0.025);
+        }
 
-            <span
-              style={{
-                background: "#B8E3F5",
-                padding: "9px 13px",
-                borderRadius: "8px",
-                fontSize: "11px",
-                fontWeight: 800,
-                letterSpacing: "0.4px",
-              }}
-            >
-              SDG 8 · ECONOMIC GROWTH
-            </span>
-          </div>
-        </div>
+        .yf-purpose-card-heading {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          margin-bottom: 22px;
+        }
 
-        {/* RIGHT: MONEY ILLUSTRATION */}
-        <div
-          className="money-illustration"
-          role="img"
-          aria-label="Illustration of savings, banknotes, and coins"
-          style={{
-            position: "relative",
-            minHeight: "300px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "#EAF3D5",
-            borderRadius: "24px",
-            overflow: "hidden",
-          }}
-        >
-          {/* Decorative circles */}
-          <div
-            style={{
-              position: "absolute",
-              width: "230px",
-              height: "230px",
-              borderRadius: "50%",
-              background: "#C6D95B",
-              opacity: 0.55,
-              top: "35px",
-              right: "-35px",
-            }}
-          />
+        .yf-purpose-number {
+          width: 58px;
+          height: 58px;
+          flex-shrink: 0;
+          border-radius: 15px;
+          display: grid;
+          place-items: center;
+          font-family: 'Fredoka', sans-serif;
+          font-size: 27px;
+          font-weight: 600;
+        }
 
-          <div
-            style={{
-              position: "absolute",
-              width: "140px",
-              height: "140px",
-              borderRadius: "50%",
-              background: "#B8E3F5",
-              bottom: "-30px",
-              left: "-15px",
-            }}
-          />
+        .yf-purpose-tag {
+          font-size: 10px;
+          line-height: 1.5;
+          font-weight: 800;
+          letter-spacing: 1px;
+          margin: 0 0 6px;
+          color: ${colors.muted};
+        }
 
-          {/* Banknote */}
-          <div
-            style={{
-              position: "absolute",
-              width: "190px",
-              height: "105px",
-              background: "#6D9E77",
-              border: "5px solid #477C58",
-              borderRadius: "12px",
-              transform: "rotate(-13deg) translate(-24px, -8px)",
-              display: "grid",
-              placeItems: "center",
-              boxSizing: "border-box",
-              boxShadow: "0 12px 24px rgba(38,54,74,0.12)",
-            }}
-          >
-            <div
-              style={{
-                width: "58px",
-                height: "58px",
-                border: "2px solid rgba(255,255,255,0.65)",
-                borderRadius: "50%",
-                display: "grid",
-                placeItems: "center",
-                color: "#fffaf0",
-                fontSize: "29px",
-                fontWeight: 800,
-              }}
-            >
-              $
-            </div>
+        .yf-purpose-card-title {
+          font-family: 'Fredoka', sans-serif;
+          font-size: clamp(20px, 2.2vw, 25px);
+          line-height: 1.2;
+          margin: 0;
+          font-weight: 600;
+        }
 
-            <span
-              style={{
-                position: "absolute",
-                left: "10px",
-                top: "8px",
-                color: "#fffaf0",
-                fontSize: "10px",
-                fontWeight: 800,
-              }}
-            >
-              SAVE
-            </span>
-          </div>
+        .yf-purpose-description {
+          font-size: 14px;
+          line-height: 1.9;
+          color: ${colors.muted};
+          margin: 0 0 24px;
+        }
 
-          {/* Second banknote */}
-          <div
-            style={{
-              position: "absolute",
-              width: "170px",
-              height: "92px",
-              background: "#B8E3F5",
-              border: "4px solid #82BED7",
-              borderRadius: "12px",
-              transform: "rotate(12deg) translate(35px, 42px)",
-              display: "grid",
-              placeItems: "center",
-              boxSizing: "border-box",
-              boxShadow: "0 12px 24px rgba(38,54,74,0.1)",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "34px",
-                fontWeight: 800,
-                color: "#26364a",
-              }}
-            >
-              +
-            </span>
-          </div>
+        .yf-purpose-details {
+          border-top: 1px solid #26364a18;
+          padding-top: 19px;
+          margin-top: auto;
+        }
 
-          {/* Coins */}
-          <div
-            style={{
-              position: "absolute",
-              right: "14%",
-              top: "15%",
-              width: "62px",
-              height: "62px",
-              borderRadius: "50%",
-              background: "#F3D36B",
-              border: "5px solid #D9AE3E",
-              boxSizing: "border-box",
-              display: "grid",
-              placeItems: "center",
-              color: "#8B681E",
-              fontSize: "27px",
-              fontWeight: 800,
-              boxShadow: "0 8px 16px rgba(38,54,74,0.12)",
-            }}
-          >
-            $
-          </div>
+        .yf-purpose-details-label {
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 1.2px;
+          margin: 0 0 14px;
+        }
 
-          <div
-            style={{
-              position: "absolute",
-              right: "19%",
-              bottom: "13%",
-              width: "45px",
-              height: "45px",
-              borderRadius: "50%",
-              background: "#F3D36B",
-              border: "4px solid #D9AE3E",
-              boxSizing: "border-box",
-              display: "grid",
-              placeItems: "center",
-              color: "#8B681E",
-              fontSize: "20px",
-              fontWeight: 800,
-            }}
-          >
-            $
-          </div>
+        .yf-purpose-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: grid;
+          gap: 12px;
+        }
 
-          {/* Small floating accent */}
-          <span
-            style={{
-              position: "absolute",
-              top: "20px",
-              left: "24px",
-              fontSize: "26px",
-              color: "#71852D",
-            }}
-          >
-            ✳
-          </span>
+        .yf-purpose-list li {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          font-size: 13px;
+          line-height: 1.75;
+          color: ${colors.navy};
+        }
 
-          <span
-            style={{
-              position: "absolute",
-              bottom: "18px",
-              right: "24px",
-              background: "#26364a",
-              color: "#fffaf0",
-              padding: "10px 14px",
-              borderRadius: "100px",
-              fontSize: "11px",
-              fontWeight: 700,
-              letterSpacing: "1px",
-            }}
-          >
-            YOUR MONEY, YOUR FUTURE
-          </span>
-        </div>
-      </section>
+        .yf-check {
+          color: #7c9634;
+          font-weight: 900;
+          flex-shrink: 0;
+        }
+
+        .yf-vision-layout {
+          display: grid;
+          grid-template-columns: 1fr 0.9fr;
+          gap: 48px;
+          align-items: center;
+        }
+
+        .yf-vision-quote {
+          background: ${colors.navy};
+          color: ${colors.cream};
+          border-radius: 23px;
+          padding: clamp(27px, 4vw, 42px);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .yf-mission-grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 18px;
+          align-items: stretch;
+        }
+
+        .yf-mission-card {
+          border-radius: 18px;
+          padding: 25px;
+          background: ${colors.white};
+          border: 1px solid #26364a12;
+          height: 100%;
+        }
+
+        .yf-purpose-heading {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: 25px;
+          margin-bottom: 35px;
+        }
+
+        .yf-sdg-badge {
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 1px;
+          white-space: nowrap;
+          padding: 10px 14px;
+          border: 1px solid #26364a25;
+          border-radius: 100px;
+        }
+
+        .yf-why-banner {
+          margin-top: 25px;
+          padding: 20px 23px;
+          background: ${colors.navy};
+          color: ${colors.cream};
+          border-radius: 16px;
+          display: flex;
+          align-items: flex-start;
+          gap: 14px;
+        }
+
+        .yf-cta-pill {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          background: ${colors.lime};
+          padding: 13px 20px;
+          border-radius: 100px;
+          margin-top: 28px;
+          font-size: 13px;
+          font-weight: 800;
+          max-width: 100%;
+        }
+
+        @media (min-width: 1100px) {
+          .yf-purpose-card {
+            padding: 32px;
+          }
+        }
+
+        @media (max-width: 760px) {
+          .yf-purpose-grid,
+          .yf-vision-layout {
+            grid-template-columns: minmax(0, 1fr);
+          }
+
+          .yf-mission-grid {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 14px;
+          }
+
+          .yf-purpose-heading {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 18px;
+          }
+
+          .yf-vision-layout {
+            gap: 28px;
+          }
+
+          .yf-purpose-card {
+            padding: 24px;
+          }
+
+          .yf-mission-card {
+            padding: 23px;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .yf-purpose-card-heading {
+            align-items: flex-start;
+            gap: 12px;
+          }
+
+          .yf-purpose-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 13px;
+            font-size: 23px;
+          }
+
+          .yf-purpose-tag {
+            font-size: 9px;
+            letter-spacing: 0.6px;
+          }
+
+          .yf-purpose-card-title {
+            font-size: 21px;
+          }
+
+          .yf-why-banner {
+            padding: 18px;
+          }
+
+          .yf-sdg-badge {
+            white-space: normal;
+          }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          .yf-purpose-card,
+          .yf-mission-card {
+            transition:
+              transform 180ms ease,
+              box-shadow 180ms ease;
+          }
+
+          @media (hover: hover) {
+            .yf-purpose-card:hover,
+            .yf-mission-card:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 12px 28px rgba(38, 54, 74, 0.07);
+            }
+          }
+        }
+      `}</style>
 
       {/* =====================================
-          02. OUR PURPOSE IN ACTION
+          HERO — WHAT WE STAND FOR
       ===================================== */}
+
       <section
         style={{
-          marginTop: "clamp(64px, 8vw, 96px)",
+          padding: "clamp(42px, 6vw, 72px) 0 clamp(48px, 7vw, 76px)",
         }}
       >
         <div
           style={{
+            ...container,
             display: "grid",
             gridTemplateColumns:
-              "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
-            gap: "20px",
-            alignItems: "end",
-            marginBottom: "30px",
-          }}
-        >
-          <div>
-            <p style={eyebrowStyle}>OUR PURPOSE IN ACTION</p>
-
-            <h2 style={sectionTitle}>
-              Turning knowledge into{" "}
-              <span style={{ color: "#849A35" }}>opportunity.</span>
-            </h2>
-          </div>
-
-          <p
-            style={{
-              ...bodyText,
-              maxWidth: "460px",
-              marginBottom: "4px",
-            }}
-          >
-            Our work connects financial education with the
-            real-life skills young people need to learn, grow,
-            and participate in a changing economy.
-          </p>
-        </div>
-
-        <div
-          className="sdg-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
-            gap: "20px",
-          }}
-        >
-          <article
-            style={{
-              background: "#B8E3F5",
-              padding: "clamp(24px, 3vw, 34px)",
-              borderRadius: "22px",
-              boxSizing: "border-box",
-            }}
-          >
-            <span style={{ fontSize: "30px" }}>📚</span>
-
-            <p
-              style={{
-                fontSize: "11px",
-                fontWeight: 800,
-                letterSpacing: "1.5px",
-                margin: "20px 0 10px",
-              }}
-            >
-              SUSTAINABLE DEVELOPMENT GOAL 04
-            </p>
-
-            <h3
-              style={{
-                fontFamily: "Fredoka, sans-serif",
-                fontSize: "clamp(23px, 2.5vw, 30px)",
-                lineHeight: 1.25,
-                margin: "0 0 14px",
-              }}
-            >
-              Quality Education
-            </h3>
-
-            <p style={{ ...bodyText, color: "#344B5E" }}>
-              We support accessible and inclusive learning by
-              turning financial concepts into practical lessons
-              that young people can apply in their daily lives.
-            </p>
-          </article>
-
-          <article
-            style={{
-              background: "#C6D95B",
-              padding: "clamp(24px, 3vw, 34px)",
-              borderRadius: "22px",
-              boxSizing: "border-box",
-            }}
-          >
-            <span style={{ fontSize: "30px" }}>💼</span>
-
-            <p
-              style={{
-                fontSize: "11px",
-                fontWeight: 800,
-                letterSpacing: "1.5px",
-                margin: "20px 0 10px",
-              }}
-            >
-              SUSTAINABLE DEVELOPMENT GOAL 08
-            </p>
-
-            <h3
-              style={{
-                fontFamily: "Fredoka, sans-serif",
-                fontSize: "clamp(23px, 2.5vw, 30px)",
-                lineHeight: 1.25,
-                margin: "0 0 14px",
-              }}
-            >
-              Decent Work & Growth
-            </h3>
-
-            <p style={{ ...bodyText, color: "#34421F" }}>
-              We help young people develop financial confidence
-              and responsible habits as they prepare for future
-              opportunities and economic participation.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* =====================================
-          03. OUR VISION
-      ===================================== */}
-      <section
-        style={{
-          marginTop: "clamp(72px, 9vw, 112px)",
-        }}
-      >
-        <p style={eyebrowStyle}>01 — OUR VISION</p>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
+              "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
             gap: "clamp(24px, 5vw, 60px)",
             alignItems: "center",
           }}
         >
           <div>
-            <h2 style={sectionTitle}>
-              A future shaped by{" "}
-              <span style={{ color: "#849A35" }}>
-                young people.
-              </span>
-            </h2>
-
-            <p style={bodyText}>
-              We envision an Indonesia where every young person
-              understands the importance of financial literacy,
-              makes responsible financial decisions with
-              confidence, and has the opportunity to build a
-              brighter future.
+            <p style={eyebrow}>
+              YOUTHFUNDED · OUR PURPOSE
             </p>
+
+            <h1
+              style={{
+                fontFamily: "'Fredoka', sans-serif",
+                fontSize: "clamp(36px, 4.5vw, 54px)",
+                lineHeight: 1.1,
+                letterSpacing: "-1px",
+                fontWeight: 600,
+                margin: "0 0 22px",
+                maxWidth: 500,
+              }}
+            >
+              What We
+              <br />
+              Stand For
+              <span style={{ color: "#8ca33a" }}>.</span>
+            </h1>
+
+            <p
+              style={{
+                fontSize: "clamp(14px, 1.4vw, 16px)",
+                lineHeight: 1.9,
+                color: colors.muted,
+                maxWidth: 490,
+                margin: "0 0 24px",
+              }}
+            >
+              We believe that understanding money is more than
+              a life skill. It is a foundation for making informed
+              decisions, pursuing opportunities, and building a
+              better future.
+            </p>
+
+            <div className="yf-cta-pill" style={{ marginTop: 0 }}>
+              Financial literacy for every young mind
+              <span aria-hidden="true">↗</span>
+            </div>
           </div>
 
-          <div
-            style={{
-              background: "#26364a",
-              color: "#fffaf0",
-              padding: "clamp(28px, 4vw, 42px)",
-              borderRadius: "24px",
-              boxSizing: "border-box",
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
+          <MoneyIllustration />
+        </div>
+      </section>
+
+      {/* =====================================
+          PURPOSE — SDG 4 & SDG 8
+      ===================================== */}
+
+      <section
+        style={{
+          background: "#f4f1e5",
+          padding: "clamp(48px, 6.5vw, 78px) 0",
+        }}
+      >
+        <div style={container}>
+          <div className="yf-purpose-heading">
+            <div style={{ maxWidth: 620 }}>
+              <p style={eyebrow}>
+                OUR PURPOSE IN ACTION
+              </p>
+
+              <h2 style={sectionTitle}>
+                Turning knowledge into opportunity.
+              </h2>
+
+              <p
+                style={{
+                  color: colors.muted,
+                  fontSize: 14,
+                  lineHeight: 1.9,
+                  maxWidth: 610,
+                  margin: 0,
+                }}
+              >
+                YouthFunded aligns its purpose with two United
+                Nations Sustainable Development Goals. Together,
+                they reflect our belief that young people deserve
+                access to knowledge and opportunities to shape
+                their futures.
+              </p>
+            </div>
+
+            <span className="yf-sdg-badge">
+              SDG 04 + SDG 08
+            </span>
+          </div>
+
+          <div className="yf-purpose-grid">
+            <PurposeCard
+              number="04"
+              title="Quality Education"
+              tag="SUSTAINABLE DEVELOPMENT GOAL 4"
+              color={colors.blue}
+              description="We believe quality education should equip young people with practical knowledge they can use in everyday life. Financial literacy is an important part of that learning, helping young people understand budgeting, saving, spending, and responsible financial decisions."
+              points={[
+                "Make financial literacy easier for young people to understand.",
+                "Share accessible, engaging, and educational resources.",
+                "Encourage lifelong learning and informed decision-making.",
+              ]}
+            />
+
+            <PurposeCard
+              number="08"
+              title="Decent Work & Economic Growth"
+              tag="SUSTAINABLE DEVELOPMENT GOAL 8"
+              color={colors.lime}
+              description="We believe financial knowledge can help young people prepare for a more independent future. By developing financial awareness and an entrepreneurial mindset, they can better understand economic opportunities and make thoughtful plans for their goals."
+              points={[
+                "Build awareness of saving, planning, and financial responsibility.",
+                "Encourage entrepreneurial thinking and initiative.",
+                "Help young people prepare for future work and economic participation.",
+              ]}
+            />
+          </div>
+
+          <div className="yf-why-banner">
             <span
               style={{
-                color: "#C6D95B",
-                fontSize: "32px",
+                fontSize: 23,
+                lineHeight: 1,
+                color: colors.lime,
+                flexShrink: 0,
               }}
             >
               ✳
@@ -522,47 +751,89 @@ export default function Mission() {
 
             <p
               style={{
-                color: "#C6D95B",
-                fontSize: "11px",
-                fontWeight: 800,
-                letterSpacing: "2px",
-                margin: "18px 0 14px",
+                margin: 0,
+                fontSize: 13,
+                lineHeight: 1.9,
               }}
             >
-              THE FUTURE WE BELIEVE IN
+              <strong>Why both goals?</strong>{" "}
+              Education gives young people the knowledge to make
+              informed choices, while economic opportunity helps
+              them put that knowledge into practice. YouthFunded
+              brings these ideas together through youth-focused
+              financial literacy.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <h3
-              style={{
-                fontFamily: "Fredoka, sans-serif",
-                fontSize: "clamp(25px, 3vw, 36px)",
-                lineHeight: 1.3,
-                margin: "0 0 16px",
-              }}
-            >
-              Every young idea deserves a chance to grow.
-            </h3>
+      {/* =====================================
+          VISION
+      ===================================== */}
+
+      <section
+        style={{
+          padding: "clamp(55px, 7.5vw, 88px) 0",
+        }}
+      >
+        <div
+          className="yf-vision-layout"
+          style={container}
+        >
+          <div>
+            <p style={eyebrow}>OUR VISION</p>
+
+            <h2 style={sectionTitle}>
+              A future where young people feel confident about money.
+            </h2>
 
             <p
               style={{
-                color: "rgba(255,250,240,0.78)",
-                fontSize: "14px",
-                lineHeight: 1.85,
+                color: colors.muted,
+                fontSize: 14,
+                lineHeight: 1.95,
+                maxWidth: 520,
                 margin: 0,
               }}
             >
-              A financially aware generation can make informed
-              choices, explore opportunities, and contribute
-              positively to society.
+              We envision a generation that can approach financial
+              decisions with knowledge, confidence, and responsibility.
+              A generation that recognizes opportunities, understands
+              its choices, and has the tools to work toward a more
+              sustainable future.
+            </p>
+          </div>
+
+          <div className="yf-vision-quote">
+            <div
+              style={{
+                fontSize: 36,
+                color: colors.lime,
+                marginBottom: 18,
+              }}
+            >
+              ✳
+            </div>
+
+            <p
+              style={{
+                fontFamily: "'Fredoka', sans-serif",
+                fontSize: "clamp(23px, 3vw, 30px)",
+                lineHeight: 1.45,
+                margin: "0 0 24px",
+                fontWeight: 500,
+              }}
+            >
+              “Financial confidence begins with knowledge, and grows
+              through action.”
             </p>
 
             <div
               style={{
-                height: "5px",
-                width: "76px",
-                background: "#C6D95B",
-                borderRadius: "10px",
-                marginTop: "26px",
+                height: 4,
+                width: 65,
+                background: colors.lime,
+                borderRadius: 10,
               }}
             />
           </div>
@@ -570,157 +841,155 @@ export default function Mission() {
       </section>
 
       {/* =====================================
-          04. OUR MISSION
+          MISSION
       ===================================== */}
+
       <section
         style={{
-          marginTop: "clamp(72px, 9vw, 112px)",
+          background: "#eaf4f5",
+          padding: "clamp(48px, 6.5vw, 78px) 0",
         }}
       >
-        <p style={eyebrowStyle}>02 — OUR MISSION</p>
+        <div style={container}>
+          <p style={eyebrow}>OUR MISSION</p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
-            gap: "24px",
-            alignItems: "end",
-            marginBottom: "32px",
-          }}
-        >
-          <h2 style={sectionTitle}>
-            Small steps.{" "}
-            <span style={{ color: "#849A35" }}>
-              Meaningful impact.
-            </span>
+          <h2
+            style={{
+              ...sectionTitle,
+              maxWidth: 650,
+            }}
+          >
+            Small steps toward a financially aware generation.
           </h2>
 
           <p
             style={{
-              ...bodyText,
-              maxWidth: "450px",
-              marginBottom: "18px",
+              fontSize: 14,
+              color: colors.muted,
+              lineHeight: 1.9,
+              maxWidth: 650,
+              margin: "0 0 32px",
             }}
           >
-            We bring our purpose to life through three
-            commitments that guide what we create and how
-            we support young people.
+            We aim to make financial literacy more accessible,
+            relevant, and meaningful to young people through
+            learning, collaboration, and youth-led initiatives.
           </p>
-        </div>
 
-        <div
-          className="mission-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
-            gap: "18px",
-          }}
-        >
-          {missions.map((mission) => (
-            <article
-              key={mission.number}
-              className="mission-card"
-              style={{
-                minWidth: 0,
-                padding: "26px",
-                background: "#fffaf0",
-                border: "1px solid rgba(38,54,74,0.12)",
-                borderRadius: "20px",
-                borderTop: `5px solid ${mission.color}`,
-                boxSizing: "border-box",
-                transition:
-                  "transform 0.2s ease, box-shadow 0.2s ease",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  marginBottom: "24px",
-                }}
+          <div className="yf-mission-grid">
+            {[
+              {
+                number: "01",
+                title: "Make Learning Accessible",
+                text: "Present financial concepts in approachable ways so young people can learn at their own pace and apply what they discover.",
+                color: colors.blue,
+              },
+              {
+                number: "02",
+                title: "Empower Youth Initiative",
+                text: "Encourage young people to share ideas, create educational initiatives, and take an active role in their communities.",
+                color: colors.lime,
+              },
+              {
+                number: "03",
+                title: "Build Practical Awareness",
+                text: "Promote responsible financial habits and help young people connect what they learn with everyday choices and future plans.",
+                color: "#f1c96c",
+              },
+            ].map((item) => (
+              <article
+                className="yf-mission-card"
+                key={item.number}
               >
-                <span
+                <div
                   style={{
-                    fontFamily: "Fredoka, sans-serif",
-                    fontSize: "30px",
-                    fontWeight: 600,
-                  }}
-                >
-                  {mission.number}
-                </span>
-
-                <span
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "14px",
-                    background: mission.color,
+                    width: 43,
+                    height: 43,
+                    borderRadius: 12,
                     display: "grid",
                     placeItems: "center",
-                    fontSize: "22px",
+                    background: item.color,
+                    fontFamily: "'Fredoka', sans-serif",
+                    fontSize: 19,
+                    fontWeight: 600,
+                    marginBottom: 21,
                   }}
                 >
-                  {mission.icon}
-                </span>
-              </div>
+                  {item.number}
+                </div>
 
-              <h3
-                style={{
-                  fontFamily: "Fredoka, sans-serif",
-                  fontSize: "24px",
-                  lineHeight: 1.3,
-                  margin: "0 0 12px",
-                }}
-              >
-                {mission.title}
-              </h3>
+                <h3
+                  style={{
+                    fontFamily: "'Fredoka', sans-serif",
+                    fontSize: 21,
+                    lineHeight: 1.3,
+                    fontWeight: 600,
+                    margin: "0 0 13px",
+                  }}
+                >
+                  {item.title}
+                </h3>
 
-              <p style={{ ...bodyText, fontSize: "14px" }}>
-                {mission.description}
-              </p>
-            </article>
-          ))}
+                <p
+                  style={{
+                    color: colors.muted,
+                    fontSize: 13,
+                    lineHeight: 1.9,
+                    margin: 0,
+                  }}
+                >
+                  {item.text}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* =====================================
-          05. OUR BELIEF
+          OUR BELIEF
       ===================================== */}
+
       <section
         style={{
-          marginTop: "clamp(72px, 9vw, 112px)",
-          padding: "clamp(28px, 5vw, 48px)",
-          background: "#EAF3D5",
-          borderRadius: "24px",
-          boxSizing: "border-box",
-          display: "grid",
-          gridTemplateColumns:
-            "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
-          alignItems: "center",
-          gap: "24px",
+          padding: "clamp(52px, 7vw, 78px) 0",
         }}
       >
-        <div>
-          <p style={eyebrowStyle}>OUR BELIEF</p>
+        <div
+          style={{
+            ...container,
+            textAlign: "center",
+            maxWidth: 760,
+          }}
+        >
+          <p style={eyebrow}>OUR BELIEF</p>
 
-          <h2 style={{ ...sectionTitle, marginBottom: 0 }}>
-            Better knowledge.
-            <br />
-            <span style={{ color: "#71852D" }}>
-              Brighter possibilities.
-            </span>
+          <h2 style={sectionTitle}>
+            Every young person deserves the chance to understand,
+            choose, and grow.
           </h2>
-        </div>
 
-        <p style={bodyText}>
-          We believe meaningful change starts with small,
-          consistent steps. Together, we can make financial
-          education more accessible and help young people
-          approach their futures with greater confidence.
-        </p>
+          <p
+            style={{
+              fontSize: 14,
+              lineHeight: 1.95,
+              color: colors.muted,
+              margin: "0 auto",
+              maxWidth: 650,
+            }}
+          >
+            We believe meaningful change starts when knowledge
+            becomes accessible and young people are empowered to
+            use it. Through financial literacy, collaboration, and
+            small but purposeful actions, we hope to help create
+            a future full of possibilities.
+          </p>
+
+          <div className="yf-cta-pill">
+            Small Steps, Big Impact
+            <span aria-hidden="true">✳</span>
+          </div>
+        </div>
       </section>
     </main>
   );
