@@ -1220,4 +1220,323 @@ p {
 .team-board {
   padding: 24px;
   border: 1px solid var(--ink);
-  background: var(--pap
+  background: var(--paper);
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 rgba(38, 54, 74, 0.1);
+}
+
+/* ========================================
+   13. FOOTER
+======================================== */
+
+.site-footer,
+footer.site-footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 35px 6%;
+  background: var(--ink);
+  color: var(--paper);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.site-footer p,
+footer.site-footer p {
+  margin: 0;
+  color: rgba(255, 250, 240, 0.82);
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+.site-footer a,
+footer.site-footer a {
+  color: var(--green);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   14. RESPONSIVE: TABLET
+======================================== */
+
+@media (max-width: 992px) {
+  .mission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-section,
+  .team-section {
+    gap: 6%;
+  }
+
+  .hero {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .section-pad {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .site-header {
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+}
+
+/* ========================================
+   15. RESPONSIVE: MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 4%;
+  }
+
+  .site-header .brand {
+    width: 120px;
+    min-width: 120px;
+    min-height: 45px;
+  }
+
+  .site-header .brand-logo {
+    width: 120px !important;
+    max-height: 45px;
+  }
+
+  .nav-links {
+    order: 3;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 16px;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .nav-cta {
+    padding: 10px 13px;
+    font-size: 0.72rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    min-height: auto;
+    padding: 65px 6% 80px;
+    text-align: left;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 12vw, 5rem);
+    text-align: left;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero-art {
+    width: 100%;
+    max-width: 430px;
+    min-height: 380px;
+  }
+
+  .section-pad {
+    padding: 70px 6%;
+  }
+
+  .about-section,
+  .team-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-visual {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .about-copy > p {
+    margin-bottom: 20px;
+    line-height: 1.85;
+  }
+
+  .about-copy > p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .section-heading.centered {
+    text-align: center;
+  }
+
+  .mission-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-row {
+    grid-template-columns: 85px minmax(0, 1fr) 30px;
+    gap: 15px;
+    padding: 22px 0;
+  }
+
+  .event-date {
+    min-height: 80px;
+    padding: 8px;
+  }
+
+  .documentation-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 220px);
+  }
+
+  .doc-large {
+    grid-row: auto;
+  }
+
+  .vision-card {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .scroll-cue {
+    right: 6%;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ========================================
+   16. RESPONSIVE: SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+  .site-header {
+    gap: 10px;
+  }
+
+  .site-header .brand {
+    width: 105px;
+    min-width: 105px;
+  }
+
+  .site-header .brand-logo {
+    width: 105px !important;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+  }
+
+  .nav-cta {
+    padding: 9px 11px;
+    font-size: 0.68rem;
+  }
+
+  .hero {
+    padding: 55px 5% 75px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .hero-art {
+    min-height: 330px;
+  }
+
+  .art-book {
+    left: 18px;
+    width: 55%;
+    padding: 15px;
+  }
+
+  .piggy {
+    right: 12px;
+    width: 145px;
+    height: 115px;
+  }
+
+  .section-pad {
+    padding: 60px 5%;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-row {
+    grid-template-columns: 70px minmax(0, 1fr);
+  }
+
+  .event-arrow {
+    display: none;
+  }
+
+  .vision-card {
+    padding: 20px;
+  }
+
+  .site-footer,
+  footer.site-footer {
+    padding: 28px 5%;
+  }
+}
+
+/* ========================================
+   17. REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
