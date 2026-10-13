@@ -671,17 +671,13 @@ export default function Mission() {
               image="/images/sdg4.png"
               color={colors.blue}
               description="Everyone deserves access to quality learning. Financial literacy helps young people understand budgeting, saving, spending, and making informed financial decisions."
-              contribution="We promote accessible financial education through engaging resources and youth-focused learning initiatives."
-            />
-
+              
             <SDGCard
               number="08"
               title="Decent Work & Economic Growth"
               image="/images/sdg8.png"
               color={colors.lime}
               description="Young people need the knowledge and confidence to prepare for work, entrepreneurship, and economic opportunities."
-              contribution="We encourage financial responsibility, entrepreneurial thinking, and preparation for future economic independence."
-            />
           </div>
         </div>
       </section>
