@@ -238,17 +238,33 @@ function BrandLogo({ footer = false }: { footer?: boolean }) {
     </a>
   );
 }
+
+/* INTRO VIDEO */
+
 function IntroVideo({ onFinish }: { onFinish: () => void }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+
+    video.play().catch((error) => {
+      console.error("Intro video gagal autoplay:", error);
+    });
+  }, []);
+
   return (
     <div className="intro-screen">
       <video
+        ref={videoRef}
         className="intro-video"
         autoPlay
         muted
         playsInline
         preload="auto"
         onEnded={onFinish}
-        onError={onFinish}
       >
         <source
           src="/intro-youthfunded.mp4"
@@ -258,15 +274,18 @@ function IntroVideo({ onFinish }: { onFinish: () => void }) {
 
       <button
         className="skip-intro"
-        onClick={onFinish}
         type="button"
+        onClick={onFinish}
       >
         Skip Intro →
       </button>
     </div>
   );
 }
+
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
 
   let page;
@@ -336,72 +355,45 @@ function App() {
   }
 
   return (
-  <>
-    {showIntro && (
-      <IntroVideo onFinish={() => setShowIntro(false)} />
-    )}
+    <>
+      {showIntro && (
+        <IntroVideo onFinish={() => setShowIntro(false)} />
+      )}
 
-    <div
-      style={{ display: showIntro ? "none" : "block" }}
-    >
-      <header className="site-header">
-        <BrandLogo />
+      <div
+        style={{
+          display: showIntro ? "none" : "block",
+        }}
+      >
+        <header className="site-header">
+          <BrandLogo />
 
-        <nav className="nav-links" aria-label="Main navigation">
-          <a href="/">Home</a>
-          <a href="/mission">Our Purpose</a>
-          <a href="/articles">Articles</a>
-          <a href="/events">Events</a>
-          <a href="/team">Our Team</a>
-        </nav>
+          <nav className="nav-links" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/mission">Our Purpose</a>
+            <a href="/articles">Articles</a>
+            <a href="/events">Events</a>
+            <a href="/team">Our Team</a>
+          </nav>
 
-        <a className="nav-cta" href="/media">
-          Let’s Connect <span>↗</span>
-        </a>
-      </header>
+          <a className="nav-cta" href="/media">
+            Let’s Connect <span>↗</span>
+          </a>
+        </header>
 
-      {page}
+        {page}
 
-      <footer className="site-footer">
-        <BrandLogo footer />
+        <footer className="site-footer">
+          <BrandLogo footer />
 
-        <p>Small steps, big impact. Made for the next generation.</p>
+          <p>Small steps, big impact. Made for the next generation.</p>
 
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} YouthFunded</span>
-          <a href="/">Back to Home ↑</a>
-        </div>
-      </footer>
-    </div>
-  </>
-);
-        <BrandLogo />
-
-        <nav className="nav-links" aria-label="Main navigation">
-          <a href="/">Home</a>
-          <a href="/mission">Our Purpose</a>
-          <a href="/articles">Articles</a>
-          <a href="/events">Events</a>
-          <a href="/team">Our Team</a>
-        </nav>
-
-        <a className="nav-cta" href="/media">
-          Let’s Connect <span>↗</span>
-        </a>
-      </header>
-
-      {page}
-
-      <footer className="site-footer">
-        <BrandLogo footer />
-
-        <p>Small steps, big impact. Made for the next generation.</p>
-
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} YouthFunded</span>
-          <a href="/">Back to Home ↑</a>
-        </div>
-      </footer>
+          <div className="footer-bottom">
+            <span>© {new Date().getFullYear()} YouthFunded</span>
+            <a href="/">Back to Home ↑</a>
+          </div>
+        </footer>
+      </div>
     </>
   );
 }
