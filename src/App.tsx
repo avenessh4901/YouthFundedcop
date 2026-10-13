@@ -470,3 +470,11 @@ function App() {
 }
 
 export default App;
+.meet-youthfunded p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.meet-youthfunded p:last-child {
+  margin-bottom: 0;
+}
