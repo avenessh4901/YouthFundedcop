@@ -2140,3 +2140,21 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
+
+.video-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.responsive-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #000;
+}
