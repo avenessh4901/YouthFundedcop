@@ -238,7 +238,34 @@ function BrandLogo({ footer = false }: { footer?: boolean }) {
     </a>
   );
 }
+function IntroVideo({ onFinish }: { onFinish: () => void }) {
+  return (
+    <div className="intro-screen">
+      <video
+        className="intro-video"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        onEnded={onFinish}
+        onError={onFinish}
+      >
+        <source
+          src="/intro-youthfunded.mp4"
+          type="video/mp4"
+        />
+      </video>
 
+      <button
+        className="skip-intro"
+        onClick={onFinish}
+        type="button"
+      >
+        Skip Intro →
+      </button>
+    </div>
+  );
+}
 function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
 
