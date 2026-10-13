@@ -3,7 +3,7 @@ const missions = [
     number: "01",
     title: "Accessible Learning",
     description:
-      "Make financial literacy easy to understand by turning complex ideas into engaging, practical lessons that every young person can access.",
+      "Make financial literacy easy to understand through engaging, practical lessons that every young person can access.",
     color: "#C6D95B",
     icon: "📚",
   },
@@ -11,7 +11,7 @@ const missions = [
     number: "02",
     title: "Responsible Habits",
     description:
-      "Build a healthy culture of smart money management and responsible financial decision-making from an early age.",
+      "Encourage healthy money management and responsible financial decisions from an early age.",
     color: "#B8E3F5",
     icon: "🌱",
   },
@@ -19,526 +19,619 @@ const missions = [
     number: "03",
     title: "Youth Collaboration",
     description:
-      "Empower young people to learn, create, and grow together through meaningful, community-led initiatives.",
-    color: "#F4C7D9",
+      "Empower young people to learn, create, and grow together through community-led initiatives.",
+    color: "#F3D6B8",
     icon: "🤝",
   },
 ];
 
+const sectionTitle: React.CSSProperties = {
+  fontFamily: "Fredoka, sans-serif",
+  fontSize: "clamp(30px, 3.5vw, 46px)",
+  fontWeight: 600,
+  lineHeight: 1.2,
+  letterSpacing: "-0.8px",
+  margin: "0 0 18px",
+};
+
+const bodyText: React.CSSProperties = {
+  fontSize: "clamp(14px, 1.2vw, 17px)",
+  lineHeight: 1.85,
+  color: "#526174",
+  margin: 0,
+};
+
+const eyebrowStyle: React.CSSProperties = {
+  color: "#71852D",
+  fontSize: "12px",
+  fontWeight: 800,
+  letterSpacing: "2px",
+  margin: "0 0 16px",
+};
+
 export default function Mission() {
   return (
     <main
-      className="mission-page"
+      className="purpose-page"
       style={{
         width: "100%",
-        maxWidth: "1440px",
+        maxWidth: "1280px",
         margin: "0 auto",
-        padding: "clamp(32px, 6vw, 80px) clamp(20px, 6vw, 88px)",
+        padding: "clamp(24px, 4vw, 52px) clamp(20px, 5vw, 64px) 80px",
         boxSizing: "border-box",
         color: "#26364a",
         overflow: "hidden",
       }}
     >
-      {/* =========================================
-          HERO — OUR PURPOSE
-      ========================================= */}
+      {/* =====================================
+          01. WHAT WE STAND FOR
+      ===================================== */}
       <section
-        className="mission-hero"
+        className="purpose-hero"
         style={{
-          position: "relative",
-          padding: "clamp(32px, 6vw, 76px)",
-          background: "#26364a",
-          borderRadius: "32px",
-          color: "#fffaf0",
-          overflow: "hidden",
+          display: "grid",
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(min(100%, 360px), 1fr))",
+          alignItems: "center",
+          gap: "clamp(28px, 5vw, 64px)",
+          padding: "clamp(28px, 5vw, 56px)",
+          background: "#fffaf0",
+          border: "1px solid rgba(38, 54, 74, 0.1)",
+          borderRadius: "28px",
+          boxSizing: "border-box",
         }}
       >
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            width: "280px",
-            height: "280px",
-            borderRadius: "50%",
-            background: "#C6D95B",
-            opacity: 0.14,
-            right: "-80px",
-            top: "-100px",
-            pointerEvents: "none",
-          }}
-        />
+        {/* LEFT: TEXT */}
+        <div>
+          <p style={eyebrowStyle}>YOUTHFUNDED · OUR PURPOSE</p>
 
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            width: "160px",
-            height: "160px",
-            borderRadius: "50%",
-            border: "1px solid rgba(255,250,240,0.2)",
-            right: "65px",
-            bottom: "-80px",
-            pointerEvents: "none",
-          }}
-        />
-
-        <p
-          className="eyebrow"
-          style={{
-            color: "#C6D95B",
-            fontSize: "clamp(13px, 1.3vw, 16px)",
-            fontWeight: 800,
-            letterSpacing: "3px",
-            marginBottom: "24px",
-            position: "relative",
-          }}
-        >
-          OUR PURPOSE ✳
-        </p>
-
-        <h1
-          style={{
-            fontFamily: "Fredoka, sans-serif",
-            fontSize: "clamp(44px, 7vw, 88px)",
-            fontWeight: 700,
-            lineHeight: 1.05,
-            letterSpacing: "-2px",
-            maxWidth: "900px",
-            margin: "0 0 28px",
-            position: "relative",
-          }}
-        >
-          Financial literacy
-          <br />
-          <span style={{ color: "#C6D95B" }}>
-            changes everything.
-          </span>
-        </h1>
-
-        <p
-          style={{
-            maxWidth: "720px",
-            fontSize: "clamp(16px, 1.5vw, 20px)",
-            lineHeight: 1.9,
-            color: "rgba(255,250,240,0.82)",
-            margin: 0,
-            position: "relative",
-          }}
-        >
-          We believe every young person deserves the knowledge,
-          confidence, and opportunities to build a better financial
-          future. Through accessible education and youth-led
-          initiatives, we turn financial awareness into meaningful
-          action.
-        </p>
-
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "12px",
-            marginTop: "36px",
-            position: "relative",
-          }}
-        >
-          <span
-            style={{
-              background: "#C6D95B",
-              color: "#26364a",
-              padding: "12px 18px",
-              borderRadius: "100px",
-              fontSize: "13px",
-              fontWeight: 800,
-            }}
-          >
-            SDG 4 · QUALITY EDUCATION
-          </span>
-
-          <span
-            style={{
-              background: "#B8E3F5",
-              color: "#26364a",
-              padding: "12px 18px",
-              borderRadius: "100px",
-              fontSize: "13px",
-              fontWeight: 800,
-            }}
-          >
-            SDG 8 · DECENT WORK
-          </span>
-        </div>
-      </section>
-
-      {/* =========================================
-          SDG ALIGNMENT
-      ========================================= */}
-      <section
-        style={{
-          marginTop: "clamp(64px, 9vw, 112px)",
-        }}
-      >
-        <p
-          className="eyebrow"
-          style={{
-            color: "#64783A",
-            fontSize: "14px",
-            fontWeight: 800,
-            letterSpacing: "3px",
-            marginBottom: "16px",
-          }}
-        >
-          WHAT WE STAND FOR
-        </p>
-
-        <h2
-          style={{
-            fontFamily: "Fredoka, sans-serif",
-            fontSize: "clamp(36px, 5.5vw, 64px)",
-            lineHeight: 1.1,
-            letterSpacing: "-1px",
-            maxWidth: "800px",
-            margin: "0 0 40px",
-          }}
-        >
-          Two global goals.
-          <br />
-          <span style={{ color: "#849A35" }}>
-            One shared future.
-          </span>
-        </h2>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
-            gap: "24px",
-          }}
-        >
-          {/* SDG 4 */}
-          <article
-            style={{
-              padding: "clamp(24px, 4vw, 40px)",
-              background: "#B8E3F5",
-              borderRadius: "24px",
-              boxSizing: "border-box",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "42px",
-                display: "block",
-                marginBottom: "24px",
-              }}
-            >
-              📚
-            </span>
-
-            <p
-              style={{
-                fontSize: "12px",
-                fontWeight: 800,
-                letterSpacing: "2px",
-                marginBottom: "12px",
-              }}
-            >
-              UNITED NATIONS · SDG 4
-            </p>
-
-            <h3
-              style={{
-                fontFamily: "Fredoka, sans-serif",
-                fontSize: "clamp(28px, 3vw, 38px)",
-                lineHeight: 1.2,
-                margin: "0 0 18px",
-              }}
-            >
-              Quality Education
-            </h3>
-
-            <p
-              style={{
-                fontSize: "16px",
-                lineHeight: 1.9,
-                margin: 0,
-              }}
-            >
-              We make financial knowledge accessible, inclusive,
-              and practical, helping young people develop the
-              skills they need to navigate everyday financial
-              decisions and lifelong learning.
-            </p>
-          </article>
-
-          {/* SDG 8 */}
-          <article
-            style={{
-              padding: "clamp(24px, 4vw, 40px)",
-              background: "#C6D95B",
-              borderRadius: "24px",
-              boxSizing: "border-box",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "42px",
-                display: "block",
-                marginBottom: "24px",
-              }}
-            >
-              💼
-            </span>
-
-            <p
-              style={{
-                fontSize: "12px",
-                fontWeight: 800,
-                letterSpacing: "2px",
-                marginBottom: "12px",
-              }}
-            >
-              UNITED NATIONS · SDG 8
-            </p>
-
-            <h3
-              style={{
-                fontFamily: "Fredoka, sans-serif",
-                fontSize: "clamp(28px, 3vw, 38px)",
-                lineHeight: 1.2,
-                margin: "0 0 18px",
-              }}
-            >
-              Decent Work & Growth
-            </h3>
-
-            <p
-              style={{
-                fontSize: "16px",
-                lineHeight: 1.9,
-                margin: 0,
-              }}
-            >
-              By building healthy money habits and financial
-              confidence, we help young people prepare for
-              opportunities, develop their potential, and
-              contribute to Indonesia's economic growth.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* =========================================
-          OUR VISION
-      ========================================= */}
-      <section
-        className="mission-content"
-        style={{
-          marginTop: "clamp(80px, 12vw, 144px)",
-        }}
-      >
-        <div className="mission-intro">
-          <p
-            className="eyebrow"
-            style={{
-              color: "#849A35",
-              fontSize: "15px",
-              fontWeight: 800,
-              letterSpacing: "3px",
-              marginBottom: "20px",
-            }}
-          >
-            01 — OUR VISION
-          </p>
-
-          <h2
+          <h1
             style={{
               fontFamily: "Fredoka, sans-serif",
-              fontSize: "clamp(42px, 7vw, 84px)",
-              lineHeight: 1.08,
-              letterSpacing: "-2px",
-              maxWidth: "1000px",
-              margin: "0 0 28px",
+              fontSize: "clamp(34px, 4.2vw, 54px)",
+              fontWeight: 600,
+              lineHeight: 1.13,
+              letterSpacing: "-1.2px",
+              margin: "0 0 22px",
+              maxWidth: "540px",
             }}
           >
-            A future shaped
-            <br />
-            by{" "}
-            <span style={{ color: "#849A35" }}>
-              young people.
-            </span>
-          </h2>
+            What We{" "}
+            <span style={{ color: "#849A35" }}>Stand For.</span>
+          </h1>
 
-          <p
+          <p style={bodyText}>
+            We believe every young person deserves the knowledge
+            and confidence to make informed financial decisions.
+            By making financial literacy accessible and engaging,
+            we help young people build healthier money habits
+            and take meaningful steps toward their future.
+          </p>
+
+          <div
             style={{
-              maxWidth: "760px",
-              fontSize: "clamp(16px, 1.5vw, 19px)",
-              lineHeight: 1.9,
-              margin: 0,
-              color: "#526174",
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "10px",
+              marginTop: "26px",
             }}
           >
-            We envision a world where every young person has the
-            opportunity to learn, grow, and turn their ideas into
-            positive change. A future where youth are empowered
-            to make informed decisions, access meaningful
-            opportunities, and contribute to stronger communities.
-          </p>
+            <span
+              style={{
+                background: "#C6D95B",
+                padding: "9px 13px",
+                borderRadius: "8px",
+                fontSize: "11px",
+                fontWeight: 800,
+                letterSpacing: "0.4px",
+              }}
+            >
+              SDG 4 · EDUCATION
+            </span>
+
+            <span
+              style={{
+                background: "#B8E3F5",
+                padding: "9px 13px",
+                borderRadius: "8px",
+                fontSize: "11px",
+                fontWeight: 800,
+                letterSpacing: "0.4px",
+              }}
+            >
+              SDG 8 · ECONOMIC GROWTH
+            </span>
+          </div>
         </div>
 
-        {/* VISION FEATURE CARD */}
+        {/* RIGHT: MONEY ILLUSTRATION */}
         <div
-          className="vision-card"
+          className="money-illustration"
+          role="img"
+          aria-label="Illustration of savings, banknotes, and coins"
           style={{
             position: "relative",
-            marginTop: "40px",
-            padding: "clamp(28px, 6vw, 72px)",
-            background: "#C6D95B",
-            borderRadius: "32px",
-            boxSizing: "border-box",
+            minHeight: "300px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#EAF3D5",
+            borderRadius: "24px",
             overflow: "hidden",
           }}
         >
-          <span
-            aria-hidden="true"
+          {/* Decorative circles */}
+          <div
             style={{
               position: "absolute",
-              top: "-35px",
-              right: "20px",
-              fontSize: "clamp(100px, 18vw, 220px)",
-              lineHeight: 1,
-              opacity: 0.12,
-              pointerEvents: "none",
+              width: "230px",
+              height: "230px",
+              borderRadius: "50%",
+              background: "#C6D95B",
+              opacity: 0.55,
+              top: "35px",
+              right: "-35px",
+            }}
+          />
+
+          <div
+            style={{
+              position: "absolute",
+              width: "140px",
+              height: "140px",
+              borderRadius: "50%",
+              background: "#B8E3F5",
+              bottom: "-30px",
+              left: "-15px",
+            }}
+          />
+
+          {/* Banknote */}
+          <div
+            style={{
+              position: "absolute",
+              width: "190px",
+              height: "105px",
+              background: "#6D9E77",
+              border: "5px solid #477C58",
+              borderRadius: "12px",
+              transform: "rotate(-13deg) translate(-24px, -8px)",
+              display: "grid",
+              placeItems: "center",
+              boxSizing: "border-box",
+              boxShadow: "0 12px 24px rgba(38,54,74,0.12)",
+            }}
+          >
+            <div
+              style={{
+                width: "58px",
+                height: "58px",
+                border: "2px solid rgba(255,255,255,0.65)",
+                borderRadius: "50%",
+                display: "grid",
+                placeItems: "center",
+                color: "#fffaf0",
+                fontSize: "29px",
+                fontWeight: 800,
+              }}
+            >
+              $
+            </div>
+
+            <span
+              style={{
+                position: "absolute",
+                left: "10px",
+                top: "8px",
+                color: "#fffaf0",
+                fontSize: "10px",
+                fontWeight: 800,
+              }}
+            >
+              SAVE
+            </span>
+          </div>
+
+          {/* Second banknote */}
+          <div
+            style={{
+              position: "absolute",
+              width: "170px",
+              height: "92px",
+              background: "#B8E3F5",
+              border: "4px solid #82BED7",
+              borderRadius: "12px",
+              transform: "rotate(12deg) translate(35px, 42px)",
+              display: "grid",
+              placeItems: "center",
+              boxSizing: "border-box",
+              boxShadow: "0 12px 24px rgba(38,54,74,0.1)",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "34px",
+                fontWeight: 800,
+                color: "#26364a",
+              }}
+            >
+              +
+            </span>
+          </div>
+
+          {/* Coins */}
+          <div
+            style={{
+              position: "absolute",
+              right: "14%",
+              top: "15%",
+              width: "62px",
+              height: "62px",
+              borderRadius: "50%",
+              background: "#F3D36B",
+              border: "5px solid #D9AE3E",
+              boxSizing: "border-box",
+              display: "grid",
+              placeItems: "center",
+              color: "#8B681E",
+              fontSize: "27px",
+              fontWeight: 800,
+              boxShadow: "0 8px 16px rgba(38,54,74,0.12)",
+            }}
+          >
+            $
+          </div>
+
+          <div
+            style={{
+              position: "absolute",
+              right: "19%",
+              bottom: "13%",
+              width: "45px",
+              height: "45px",
+              borderRadius: "50%",
+              background: "#F3D36B",
+              border: "4px solid #D9AE3E",
+              boxSizing: "border-box",
+              display: "grid",
+              placeItems: "center",
+              color: "#8B681E",
+              fontSize: "20px",
+              fontWeight: 800,
+            }}
+          >
+            $
+          </div>
+
+          {/* Small floating accent */}
+          <span
+            style={{
+              position: "absolute",
+              top: "20px",
+              left: "24px",
+              fontSize: "26px",
+              color: "#71852D",
             }}
           >
             ✳
           </span>
 
-          <p
-            className="eyebrow"
+          <span
             style={{
-              fontSize: "14px",
-              fontWeight: 800,
-              letterSpacing: "3px",
-              marginBottom: "24px",
-              position: "relative",
+              position: "absolute",
+              bottom: "18px",
+              right: "24px",
+              background: "#26364a",
+              color: "#fffaf0",
+              padding: "10px 14px",
+              borderRadius: "100px",
+              fontSize: "11px",
+              fontWeight: 700,
+              letterSpacing: "1px",
             }}
           >
-            OUR VISION ✦
-          </p>
-
-          <h3
-            style={{
-              fontFamily: "Fredoka, sans-serif",
-              fontSize: "clamp(34px, 6vw, 68px)",
-              lineHeight: 1.15,
-              letterSpacing: "-1px",
-              maxWidth: "900px",
-              margin: "0 0 28px",
-              position: "relative",
-            }}
-          >
-            A world where every young idea has the chance to grow.
-          </h3>
-
-          <p
-            style={{
-              maxWidth: "800px",
-              fontSize: "clamp(16px, 1.5vw, 19px)",
-              lineHeight: 1.9,
-              margin: 0,
-              position: "relative",
-            }}
-          >
-            We envision an Indonesia where young people
-            understand the importance of financial literacy,
-            make responsible financial choices with confidence,
-            work toward financial independence, and actively
-            contribute to the growth and well-being of society.
-          </p>
+            YOUR MONEY, YOUR FUTURE
+          </span>
         </div>
       </section>
 
-      {/* =========================================
-          OUR MISSION
-      ========================================= */}
+      {/* =====================================
+          02. OUR PURPOSE IN ACTION
+      ===================================== */}
       <section
-        className="mission-content"
         style={{
-          marginTop: "clamp(88px, 12vw, 144px)",
+          marginTop: "clamp(64px, 8vw, 96px)",
         }}
       >
-        <div className="mission-intro">
-          <p
-            className="eyebrow"
-            style={{
-              color: "#849A35",
-              fontSize: "15px",
-              fontWeight: 800,
-              letterSpacing: "3px",
-              marginBottom: "20px",
-            }}
-          >
-            02 — OUR MISSION
-          </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
+            gap: "20px",
+            alignItems: "end",
+            marginBottom: "30px",
+          }}
+        >
+          <div>
+            <p style={eyebrowStyle}>OUR PURPOSE IN ACTION</p>
 
-          <h2
+            <h2 style={sectionTitle}>
+              Turning knowledge into{" "}
+              <span style={{ color: "#849A35" }}>opportunity.</span>
+            </h2>
+          </div>
+
+          <p
             style={{
-              fontFamily: "Fredoka, sans-serif",
-              fontSize: "clamp(42px, 7vw, 84px)",
-              lineHeight: 1.08,
-              letterSpacing: "-2px",
-              maxWidth: "1000px",
-              margin: "0 0 28px",
+              ...bodyText,
+              maxWidth: "460px",
+              marginBottom: "4px",
             }}
           >
-            Turning ideas into
-            <br />
+            Our work connects financial education with the
+            real-life skills young people need to learn, grow,
+            and participate in a changing economy.
+          </p>
+        </div>
+
+        <div
+          className="sdg-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
+            gap: "20px",
+          }}
+        >
+          <article
+            style={{
+              background: "#B8E3F5",
+              padding: "clamp(24px, 3vw, 34px)",
+              borderRadius: "22px",
+              boxSizing: "border-box",
+            }}
+          >
+            <span style={{ fontSize: "30px" }}>📚</span>
+
+            <p
+              style={{
+                fontSize: "11px",
+                fontWeight: 800,
+                letterSpacing: "1.5px",
+                margin: "20px 0 10px",
+              }}
+            >
+              SUSTAINABLE DEVELOPMENT GOAL 04
+            </p>
+
+            <h3
+              style={{
+                fontFamily: "Fredoka, sans-serif",
+                fontSize: "clamp(23px, 2.5vw, 30px)",
+                lineHeight: 1.25,
+                margin: "0 0 14px",
+              }}
+            >
+              Quality Education
+            </h3>
+
+            <p style={{ ...bodyText, color: "#344B5E" }}>
+              We support accessible and inclusive learning by
+              turning financial concepts into practical lessons
+              that young people can apply in their daily lives.
+            </p>
+          </article>
+
+          <article
+            style={{
+              background: "#C6D95B",
+              padding: "clamp(24px, 3vw, 34px)",
+              borderRadius: "22px",
+              boxSizing: "border-box",
+            }}
+          >
+            <span style={{ fontSize: "30px" }}>💼</span>
+
+            <p
+              style={{
+                fontSize: "11px",
+                fontWeight: 800,
+                letterSpacing: "1.5px",
+                margin: "20px 0 10px",
+              }}
+            >
+              SUSTAINABLE DEVELOPMENT GOAL 08
+            </p>
+
+            <h3
+              style={{
+                fontFamily: "Fredoka, sans-serif",
+                fontSize: "clamp(23px, 2.5vw, 30px)",
+                lineHeight: 1.25,
+                margin: "0 0 14px",
+              }}
+            >
+              Decent Work & Growth
+            </h3>
+
+            <p style={{ ...bodyText, color: "#34421F" }}>
+              We help young people develop financial confidence
+              and responsible habits as they prepare for future
+              opportunities and economic participation.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      {/* =====================================
+          03. OUR VISION
+      ===================================== */}
+      <section
+        style={{
+          marginTop: "clamp(72px, 9vw, 112px)",
+        }}
+      >
+        <p style={eyebrowStyle}>01 — OUR VISION</p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
+            gap: "clamp(24px, 5vw, 60px)",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <h2 style={sectionTitle}>
+              A future shaped by{" "}
+              <span style={{ color: "#849A35" }}>
+                young people.
+              </span>
+            </h2>
+
+            <p style={bodyText}>
+              We envision an Indonesia where every young person
+              understands the importance of financial literacy,
+              makes responsible financial decisions with
+              confidence, and has the opportunity to build a
+              brighter future.
+            </p>
+          </div>
+
+          <div
+            style={{
+              background: "#26364a",
+              color: "#fffaf0",
+              padding: "clamp(28px, 4vw, 42px)",
+              borderRadius: "24px",
+              boxSizing: "border-box",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            <span
+              style={{
+                color: "#C6D95B",
+                fontSize: "32px",
+              }}
+            >
+              ✳
+            </span>
+
+            <p
+              style={{
+                color: "#C6D95B",
+                fontSize: "11px",
+                fontWeight: 800,
+                letterSpacing: "2px",
+                margin: "18px 0 14px",
+              }}
+            >
+              THE FUTURE WE BELIEVE IN
+            </p>
+
+            <h3
+              style={{
+                fontFamily: "Fredoka, sans-serif",
+                fontSize: "clamp(25px, 3vw, 36px)",
+                lineHeight: 1.3,
+                margin: "0 0 16px",
+              }}
+            >
+              Every young idea deserves a chance to grow.
+            </h3>
+
+            <p
+              style={{
+                color: "rgba(255,250,240,0.78)",
+                fontSize: "14px",
+                lineHeight: 1.85,
+                margin: 0,
+              }}
+            >
+              A financially aware generation can make informed
+              choices, explore opportunities, and contribute
+              positively to society.
+            </p>
+
+            <div
+              style={{
+                height: "5px",
+                width: "76px",
+                background: "#C6D95B",
+                borderRadius: "10px",
+                marginTop: "26px",
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================
+          04. OUR MISSION
+      ===================================== */}
+      <section
+        style={{
+          marginTop: "clamp(72px, 9vw, 112px)",
+        }}
+      >
+        <p style={eyebrowStyle}>02 — OUR MISSION</p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
+            gap: "24px",
+            alignItems: "end",
+            marginBottom: "32px",
+          }}
+        >
+          <h2 style={sectionTitle}>
+            Small steps.{" "}
             <span style={{ color: "#849A35" }}>
-              meaningful action.
+              Meaningful impact.
             </span>
           </h2>
 
           <p
             style={{
-              maxWidth: "760px",
-              fontSize: "clamp(16px, 1.5vw, 19px)",
-              lineHeight: 1.9,
-              color: "#526174",
-              margin: 0,
+              ...bodyText,
+              maxWidth: "450px",
+              marginBottom: "18px",
             }}
           >
-            YouthFunded is here to make financial education
-            more relevant for Indonesia's younger generations.
-            Beyond numbers, we create engaging learning
-            experiences that empower young people to make
-            informed financial choices in everyday life.
+            We bring our purpose to life through three
+            commitments that guide what we create and how
+            we support young people.
           </p>
         </div>
 
-        {/* MISSION CARDS */}
         <div
           className="mission-grid"
           style={{
             display: "grid",
             gridTemplateColumns:
-              "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
-            gap: "24px",
-            marginTop: "44px",
+              "repeat(auto-fit, minmax(min(100%, 230px), 1fr))",
+            gap: "18px",
           }}
         >
           {missions.map((mission) => (
             <article
-              className="mission-card"
               key={mission.number}
+              className="mission-card"
               style={{
                 minWidth: 0,
-                boxSizing: "border-box",
-                padding: "clamp(24px, 3vw, 36px)",
+                padding: "26px",
                 background: "#fffaf0",
-                border: "1px solid rgba(38, 54, 74, 0.12)",
-                borderRadius: "24px",
-                borderTop: `7px solid ${mission.color}`,
+                border: "1px solid rgba(38,54,74,0.12)",
+                borderRadius: "20px",
+                borderTop: `5px solid ${mission.color}`,
+                boxSizing: "border-box",
                 transition:
-                  "transform 0.25s ease, box-shadow 0.25s ease",
+                  "transform 0.2s ease, box-shadow 0.2s ease",
               }}
             >
               <div
@@ -546,17 +639,14 @@ export default function Mission() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  gap: "16px",
-                  marginBottom: "32px",
+                  marginBottom: "24px",
                 }}
               >
                 <span
-                  className="mission-number"
                   style={{
                     fontFamily: "Fredoka, sans-serif",
-                    fontSize: "clamp(34px, 4vw, 48px)",
-                    fontWeight: 700,
-                    lineHeight: 1,
+                    fontSize: "30px",
+                    fontWeight: 600,
                   }}
                 >
                   {mission.number}
@@ -564,13 +654,13 @@ export default function Mission() {
 
                 <span
                   style={{
-                    width: "54px",
-                    height: "54px",
+                    width: "44px",
+                    height: "44px",
+                    borderRadius: "14px",
+                    background: mission.color,
                     display: "grid",
                     placeItems: "center",
-                    borderRadius: "18px",
-                    background: mission.color,
-                    fontSize: "25px",
+                    fontSize: "22px",
                   }}
                 >
                   {mission.icon}
@@ -580,22 +670,15 @@ export default function Mission() {
               <h3
                 style={{
                   fontFamily: "Fredoka, sans-serif",
-                  fontSize: "clamp(25px, 3vw, 32px)",
-                  lineHeight: 1.2,
-                  margin: "0 0 18px",
+                  fontSize: "24px",
+                  lineHeight: 1.3,
+                  margin: "0 0 12px",
                 }}
               >
                 {mission.title}
               </h3>
 
-              <p
-                style={{
-                  fontSize: "15px",
-                  lineHeight: 1.9,
-                  color: "#526174",
-                  margin: 0,
-                }}
-              >
+              <p style={{ ...bodyText, fontSize: "14px" }}>
                 {mission.description}
               </p>
             </article>
@@ -603,78 +686,41 @@ export default function Mission() {
         </div>
       </section>
 
-      {/* =========================================
-          OUR BELIEF — CLOSING
-      ========================================= */}
+      {/* =====================================
+          05. OUR BELIEF
+      ===================================== */}
       <section
         style={{
-          position: "relative",
-          marginTop: "clamp(88px, 12vw, 144px)",
-          padding: "clamp(32px, 6vw, 72px)",
-          background: "#B8E3F5",
-          borderRadius: "32px",
+          marginTop: "clamp(72px, 9vw, 112px)",
+          padding: "clamp(28px, 5vw, 48px)",
+          background: "#EAF3D5",
+          borderRadius: "24px",
           boxSizing: "border-box",
-          overflow: "hidden",
+          display: "grid",
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
+          alignItems: "center",
+          gap: "24px",
         }}
       >
-        <p
-          className="eyebrow"
-          style={{
-            fontSize: "14px",
-            fontWeight: 800,
-            letterSpacing: "3px",
-            marginBottom: "24px",
-          }}
-        >
-          OUR BELIEF ✳
-        </p>
+        <div>
+          <p style={eyebrowStyle}>OUR BELIEF</p>
 
-        <h2
-          style={{
-            fontFamily: "Fredoka, sans-serif",
-            fontSize: "clamp(38px, 6.5vw, 76px)",
-            lineHeight: 1.1,
-            letterSpacing: "-1.5px",
-            maxWidth: "900px",
-            margin: "0 0 24px",
-          }}
-        >
-          Small steps can lead to
-          <br />
-          <span style={{ color: "#526D16" }}>
-            meaningful change.
-          </span>
-        </h2>
-
-        <p
-          style={{
-            maxWidth: "700px",
-            fontSize: "clamp(16px, 1.5vw, 19px)",
-            lineHeight: 1.9,
-            margin: 0,
-          }}
-        >
-          Every lesson learned, every habit built, and every
-          opportunity shared brings us one step closer to a
-          financially confident generation. Together, we can
-          help young people learn, connect, and create a future
-          filled with possibilities.
-        </p>
-
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            right: "28px",
-            bottom: "-45px",
-            fontSize: "clamp(90px, 15vw, 170px)",
-            opacity: 0.12,
-            lineHeight: 1,
-            pointerEvents: "none",
-          }}
-        >
-          ✳
+          <h2 style={{ ...sectionTitle, marginBottom: 0 }}>
+            Better knowledge.
+            <br />
+            <span style={{ color: "#71852D" }}>
+              Brighter possibilities.
+            </span>
+          </h2>
         </div>
+
+        <p style={bodyText}>
+          We believe meaningful change starts with small,
+          consistent steps. Together, we can make financial
+          education more accessible and help young people
+          approach their futures with greater confidence.
+        </p>
       </section>
     </main>
   );
